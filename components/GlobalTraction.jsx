@@ -1,5 +1,5 @@
 "use client";
-import GlobaltractionCard from "./GlobaltractionCard";
+// import GlobaltractionCard from "./GlobaltractionCard";
 import data from "./data.json";
 
 function GlobalTraction() {
@@ -24,7 +24,7 @@ function GlobalTraction() {
             Projects
           </div>
           <div className="text-center">
-            <GlobaltractionCard data={one} id={0} />
+            {/* <GlobaltractionCard data={one} id={0} /> */}
           </div>
         </div>
         <div className="relative flex flex-col items-center justify-center w-[131px] h-[155px] lg:mx-[4rem] mac:mx-[1rem]">
@@ -32,7 +32,7 @@ function GlobalTraction() {
             StartUps
           </div>
           <div className="text-center">
-            <GlobaltractionCard data={two} id={1} />
+            {/* <GlobaltractionCard data={two} id={1} /> */}
           </div>
         </div>
         <div className="relative flex flex-col items-center justify-center w-[154px] h-[155px] lg:mx-[4rem] mac:mx-[1rem]">
@@ -40,7 +40,7 @@ function GlobalTraction() {
             Countries
           </div>
           <div className="text-center">
-            <GlobaltractionCard data={three} id={2} />
+            {/* <GlobaltractionCard data={three} id={2} /> */}
           </div>
         </div>
         <div className="relative flex flex-col items-center justify-center w-[120px] h-[155px] lg:mx-[4rem] mac:mx-[1rem]">
@@ -48,7 +48,7 @@ function GlobalTraction() {
             Years
           </div>
           <div className="text-center">
-            <GlobaltractionCard data={four} id={3} />
+            {/* <GlobaltractionCard data={four} id={3} /> */}
           </div>
         </div>
       </div>
