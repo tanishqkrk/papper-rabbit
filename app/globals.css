@@ -1,0 +1,368 @@
+/* Remove unwanted styles */
+@import url("https://fonts.googleapis.com/css2?family=Katibeh&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Katibeh&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 2px; /* Adjust the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(
+    var(--background-start-rgb)
+  ); /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--foreground-rgb)); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(
+    var(--foreground-rgb),
+    0.8
+  ); /* Slightly darker color when hovering over the scrollbar thumb */
+}
+
+/* Firefox scrollbar styles */
+* {
+  scrollbar-width: none; /* Thinner scrollbar width */
+  scrollbar-color: rgb(var(--foreground-rgb)) rgb(var(--background-start-rgb)); /* Thumb and track colors */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: white !important; /* Set background color to white */
+
+  /* Make body take full height and width */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Katibeh", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Revelstoke";
+    src: url("../public/fonts/website fonts/Revelstoke Grunge.otf")
+      format("opentype");
+  }
+
+  @font-face {
+    font-family: "Heaven";
+    src: url("../public/fonts/website fonts/Heaven-Regular.otf")
+      format("opentype");
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0000006a;
+  border-radius: 5px;
+}
+
+.gradient-border {
+  --border-width: 3px;
+  filter: blur(3);
+
+  /* position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    font-family: Lato, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: white;
+    background: #222; */
+  border-radius: var(--border-width);
+}
+
+.gradient-border::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  /* z-index: 10; */
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(
+    60deg,
+    hsl(224, 85%, 66%),
+    hsl(269, 85%, 66%),
+    hsl(314, 85%, 66%),
+    hsl(359, 85%, 66%),
+    hsl(44, 85%, 66%),
+    hsl(89, 85%, 66%),
+    hsl(134, 85%, 66%),
+    hsl(179, 85%, 66%)
+  );
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  animation: moveGradient 4s alternate infinite;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* .block-bg {
+	
+} */
+
+.block-bg:before,
+.block-bg:after {
+  content: "";
+  position: absolute;
+  border-radius: 0px;
+  filter: blur(5px);
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -2;
+  animation: steam 30s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.block-bg:after {
+  filter: blur(50px);
+}
+
+@keyframes expand {
+  0% {
+    transform: translateY(-100%);
+    height: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    height: 360px;
+  }
+}
+
+.ani {
+  /* animation: expand 1s ease-out forwards; */
+  display: block;
+}
+
+@keyframes collapse {
+  0% {
+    transform: translateY(0);
+    height: 100%;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    height: 0;
+  }
+}
+
+.noani {
+  /* overflow: hidden;
+  animation: collapse 1s ease-out forwards; */
+  display: none;
+}
+
+@keyframes colorchange {
+  0% {
+    color: pink;
+  }
+
+  10% {
+    color: red;
+  }
+
+  20% {
+    color: orange;
+  }
+
+  30% {
+    color: white;
+  }
+
+  40% {
+    color: violet;
+  }
+
+  50% {
+    color: yellow;
+  }
+
+  60% {
+    color: maroon;
+  }
+
+  70% {
+    color: cyan;
+  }
+
+  80% {
+    color: pink;
+  }
+
+  90% {
+    color: blue;
+  }
+
+  100% {
+    color: blueviolet;
+  }
+}
+
+.drop-down {
+  animation: drop 10s ease-in;
+}
+
+@keyframes drop {
+  0% {
+    height: 0%;
+  }
+  20% {
+    height: 20%;
+  }
+  40% {
+    height: 40%;
+  }
+
+  60% {
+    height: 60%;
+  }
+
+  80% {
+    height: 80%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+.pull-up {
+  animation: up 2s forwards;
+}
+
+@keyframes up {
+  0% {
+    height: 100%;
+  }
+
+  50% {
+    height: 50%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
+
+.text-custom-color {
+  animation: colorchange 10s infinite alternate;
+}
+
+.show {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.nav-items {
+  display: none;
+}
+
+.nav-buttons:hover + .nav-items {
+  display: block;
+}
+
+.nav-items:hover {
+  display: block;
+}

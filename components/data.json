@@ -1,0 +1,28 @@
+{
+    "counts": [
+        {
+            "id": "projects",
+            "label": "number of projects we have worked on",
+            "number": "130",
+            "duration": "2"
+        },
+        {
+            "id": "startups",
+            "label": "number of startups we have worked with",
+            "number": "55",
+            "duration": "2"
+        },
+        {
+            "id": "countries",
+            "label": "Customers Served",
+            "number": "7",
+            "duration": "2"
+        },
+        {
+            "id": "years",
+            "label": "experience",
+            "number": "16",
+            "duration": "2"
+        }
+    ]
+}
