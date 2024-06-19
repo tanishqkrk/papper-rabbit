@@ -1,5 +1,5 @@
 "use client";
-// import GlobaltractionCard from "./GlobaltractionCard";
+import GlobaltractionCard from "./GlobalTractionCard";
 import data from "./data.json";
 
 function GlobalTraction() {
