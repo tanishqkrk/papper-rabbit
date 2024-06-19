@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext } from "react";
 import backward from "../../../assets/headerimg/backwardarrow.svg";
 import { AppContext } from "../../../context/Appcontext";

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext } from "react";
 import MainPage from "./MainPage";
 import InnerPageComp from "./InnerPageComp";

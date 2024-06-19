@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext } from "react";
 import backward from "../../public/assets/headerimg/backwardarrow.svg";
 import Image from "next/image";

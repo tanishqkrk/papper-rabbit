@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext } from "react";
 import forward from "../../public/assets/headerimg/forwardarrow.svg";
 import login_icon from "../../public/assets/Iconly/Bold/Profile.svg";
