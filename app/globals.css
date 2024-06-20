@@ -77,6 +77,11 @@ body {
     src: url("../public/fonts/website fonts/Heaven-Regular.otf")
       format("opentype");
   }
+  @font-face {
+    font-family: "Katibeh";
+    src: url("../public/fonts/website fonts/Katibeh-Regular.ttf")
+      format("opentype");
+  }
 }
 
 @layer base {
