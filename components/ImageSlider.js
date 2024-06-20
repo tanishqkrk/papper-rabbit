@@ -41,7 +41,7 @@ export default function ImageSlider() {
 
   useEffect(() => setMounted(true), []);
 
-  const images_day = [day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11];
+  const images_day = [day2, day3, day4, day5, day6, day7, day8, day9, day10, day11];
   const images_dark = [dark1, dark2, dark3, dark4, dark5, dark6, dark7, dark8, dark9];
 
   const images = resolvedTheme === 'dark' ? images_dark : images_day;
