@@ -5,7 +5,7 @@ import Image from "next/image";
 import hatch1 from "../public/assets/brandingimg/hatch1.svg";
 import hatch2 from "../public/assets/brandingimg/hatch2.svg";
 import hatch from "../public/assets/brandingimg/hatch.svg";
-import { Link } from "react-feather";
+import Link from "next/link";
 
 function DummyBranding() {
   const [mouse, setMouse] = useState(false);
@@ -20,16 +20,16 @@ function DummyBranding() {
     <div className="w-full z-20 relative flex flex-col items-center justify-start gap-12 bg-white dark:bg-black h-screen mac:h-[880px] sm:h-full md:h-full">
       <div className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
-          <div className="w-full left-[-3rem] top-[2.1rem] absolute text-red-200 lg:text-8xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
-            Advertising
+          <div className="w-full left-[1rem] top-[2.1rem] absolute text-red-200 lg:text-8xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+            Hutch
           </div>
           <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
-            branding
+            Rabbit
           </div>
         </div>
       </div>
 
-      <div className="lg:grid lg:grid-cols-2 relative lg:grid-rows-1 sam-[58%] lg:max-w-[58%] mac:w-[75%] mac:grid mac:grid-cols-2 lg:mt-[15rem] mac:grid-rows-1 ram-[75%] flex flex-col items-center justify-center lg:mb-20">
+      <div className="lg:grid lg:grid-cols-2 relative lg:grid-rows-1 sam-[58%] lg:max-w-[58%] mac:w-[75%] mac:grid mac:grid-cols-2 lg:mt-[5rem] mac:grid-rows-1 ram-[75%] flex flex-col items-center justify-center lg:mb-20 lg:gap-20 mac:gap-20">
         <div className="relative flex items-center justify-center mt-5">
           <Image
             className="lg:min-w-[100%] mac:min-w-[100%] sm:w-[90%]"
@@ -150,26 +150,30 @@ function DummyBranding() {
             )}
           </div>
         </div>
-        <div className="w-[100%] mac:w-[80%] lg:pl-16 mac:pl-0 h-full relative flex flex-col items-start justify-center gap-10">
-          <div className="w-[100%] mt-[1.8rem] md:mt-[0rem] flex flex-col items-start justify-center gap-5">
-            <div className="text-black dark:text-white text-left text-xl lg:text-[2.2rem] font-normal font-['Heaven'] leading-[30px] lg:leading-[53px]">
-              Just because you can afford <br />a billboard, doesnt mean
-              <br /> you know branding
-            </div>
-            <div className="lg:w-[530px] mac:w-[500px] w-full h-[56px] text-black dark:text-white text-left text-xs md:text-sm lg:text-[0.9rem] font-normal font-['Inter'] leading-5">
-              In the age of cutthroat business competition, every brand needs to
-              create a unique identity. However, most people think branding is
-              just a logo, while others are confused by the whole idea. Thats
-              where we come in. We are a full-service creative agency combining
-              strategic thinking and sharp design to build great brands.
+        <div className="w-[100%]  lg:pl-16 h-full relative flex flex-col items-start justify-center gap-10">
+          <div className="w-[100%] mt-[1.8rem] md:mt-[0rem] flex flex-col  gap-5">
+            <div className=" w-full  text-black dark:text-white text-left text-xs md:text-sm lg:text-[0.9rem] font-normal font-['Inter'] leading-5">
+              We are a dynamic, Custom Crafted, 360 Degree Surround Studio, One
+              Stop Solution for all brand requirements. While customizing
+              services as per brand needs we use traditional value of art
+              combined with new technologies to advanced AI. Our brand mottos
+              have been characterized as home of all kinds of animals, taking
+              inspiration from each of their personalities, portraying its
+              symbolic significance. The eleven chosen animal qualities largely
+              depict the ideals we implement while seeding the services as well
+              as what we aim to instill in the brands we create. Since all our
+              mottos go hand in hand and intertwine with each other at some
+              stage, we combine them together under one roof to form the hutch
+              The Rabbit Hutch. Harnessing eleven personalities for the success
+              of your brand.
             </div>
           </div>
-          <div className="relative flex items-start justify-start w-[90%] sm:w-[65%] md:w-full lg:gap-10 mac:gap-3 gap-5">
-            <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black text-sm font-normal font-['Inter'] leading-none ">
-              <Link to="/hutch">View More</Link>
+          <div className=" flex items-start justify-end w-[90%] sm:w-[65%] md:w-full lg:gap-10 mac:gap-3 gap-5">
+            <button className="w-[122px] h-11  bg-pink-300 dark:bg-white rounded-[10px] text-center text-black dark:text-black text-sm font-normal font-['Inter'] leading-none ">
+              <Link href="/hutch">Know More</Link>
             </button>
             <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black text-sm font-normal font-['Inter'] leading-none ">
-              <Link to="/contactus">Reach Us</Link>
+              <Link href="/contactus">Reach Us</Link>
             </button>
           </div>
         </div>

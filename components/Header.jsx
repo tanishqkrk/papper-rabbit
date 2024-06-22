@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { FiSun, FiMoon } from "react-icons/fi";
 import dayimg from "../public/assets/headerimg/Group 2.svg";
 import darkimg from "../public/assets/headerimg/night.svg";
 import darkpr from "../public/assets/headerimg/PR2.svg";
@@ -14,13 +15,18 @@ import Portfolio from "./subnavbars/Portfolio";
 import Lounge from "./subnavbars/Lounge";
 import { AppContext } from "@/context/DataContext";
 import PopupMenu from "./popupmenu/PopupMenu";
-// import AboutUs from "./subnavbars/AboutUs"; // Uncomment if needed
+
 function Header(props) {
   const { mode, container, popup, visible } = useContext(AppContext);
 
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [hide, setHide] = useState(false);
   const [popupVisible, setPopupVisible] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const modeChange = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -30,6 +36,7 @@ function Header(props) {
   const disappear = () => {
     setHide(!hide);
   };
+
   return (
     <div className="fixed top-0 w-[100%] h-11  dark:bg-black  z-50 flex justify-center items-center  bg-opacity-90  dark:bg-opacity-50 dark:backdrop-blur-sm bg-gray-50">
       <div className="lg:w-[80%] mac:w-[80%] w-full z-40  h-11 relative flex items-center justify-between sm:p-2 md:p-2">
@@ -188,43 +195,22 @@ function Header(props) {
         {/* <div className="h-full relative sm:hidden md:hidden ">
         </div> */}
         <div className="relative flex items-center justify-center gap-[4rem]">
-          {mode ? (
-            <Image
-              className="w-10 h-full"
-              src={darkimg}
-              alt="darkmode"
-              onClick={modeChange}
-            />
+          {mounted ? (
+            theme === "dark" ? (
+              <FiSun className="w-6 h-6 text-white" onClick={modeChange} />
+            ) : (
+              <FiMoon className="w-6 h-6 text-black" onClick={modeChange} />
+            )
           ) : (
-            <Image
-              className="w-10 h-full"
-              src={dayimg}
-              alt="darkmode"
-              onClick={modeChange}
-            />
+            <div className="w-6 h-6 bg-gray-400 rounded-full" />
           )}
-          {mode ? (
-            <Image className="w-7 h-7" src={search} alt="image1" />
-          ) : (
-            <Image className="w-7 h-7" src={search} alt="image1" />
-          )}
-          {mode ? (
-            <Image
-              className="block-bg w-9 h-9"
-              src={lightpr}
-              alt="image2"
-              onClick={popup}
-            />
-          ) : (
-            <Image
-              className="block-bg w-9 h-9"
-              src={darkpr}
-              alt="image2"
-              onClick={popup}
-            />
-          )}
-          {/* <Image className="w-7 h-7" src={search} alt="image1" />
-          <Image className="block-bg w-9 h-9" src={primg} alt="image2" /> */}
+          <Image className="w-7 h-7" src={search} alt="Search" />
+          <Image
+            className="block-bg w-9 h-9"
+            src={theme === "light" ? darkpr : lightpr}
+            alt="Popup"
+            onClick={popup}
+          />
         </div>
       </div>
       {/* </div> */}
