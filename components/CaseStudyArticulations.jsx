@@ -28,7 +28,7 @@ export default function ImageSlider() {
   }
 
   return (
-    <div className="mt-2">
+    <div className="pt-10 dark:bg-black">
       <Swiper
         spaceBetween={30}
         effect={"fade"}

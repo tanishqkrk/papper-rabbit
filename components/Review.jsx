@@ -10,10 +10,10 @@ import Image from "next/image";
 
 function Review() {
   return (
-    <div className="w-full  relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex mt-20">
+    <div className="w-full dark:bg-black pt-10  relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex">
       <div className="w-full  relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
-          <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+          <div className="w-full left-0 top-[2.1rem] absolute text-purple-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
             Reviews
           </div>
           <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">

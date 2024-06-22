@@ -2,20 +2,21 @@ import React from "react";
 import portfolio1 from "../public/assets/portfolioimg/portfolio1.jpg";
 import portfolio2 from "../public/assets/portfolioimg/portfolio2.jpg";
 import Image from "next/image";
+import Link from "next/link";
 // import portfolio3 from '../../assets/portfolioimg/portfolio3.jpg';
 // import portfolio4 from '../../assets/portfolioimg/portfolio4.jpg';
 
 function Portfolio() {
   return (
-    <div className="w-[100%] lg:h-[100%] relative flex flex-col dark:bg-black items-center justify-center h-full mt-20 ">
+    <div className="w-[100%] lg:h-[100%] relative flex flex-col dark:bg-black items-center justify-center h-full ">
       <div className="w-[100%]  lg:h-[1020px] mac:h-[1020px]  flex-col justify-start items-center gap-[50px] inline-flex p-10 sm:p-2">
         <div className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
           <div className="w-full h-[6rem] relative content-center">
-            <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
-              showcase
+            <div className="w-full left-0 top-[2.1rem] absolute text-yellow-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+              Showcase
             </div>
             <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
-              portfolio
+              Portfolio
             </div>
           </div>
         </div>
@@ -23,7 +24,7 @@ function Portfolio() {
         <div className="lg:w-[57%]  mac:w-[79%] w-[100%]  lg:h-[700px] mac:h-[90%] h-[950px] sm:h-[700px] sm:p-0 relative gap-4 sm:gap-1 md:gap-1 lg:grid lg:grid-cols-4 lg:grid-rows-2 mac:grid-cols-4 mac:grid-rows-2 grid grid-cols-2 grid-rows-4">
           <div className="w-full h-full m-1 group/items bg-cover relative rounded-[20px] col-span-2">
             <Image
-              className=" w-full h-full   relative"
+              className=" w-full h-full rounded-[20px]   relative"
               src={portfolio1}
               alt=""
             />
@@ -348,7 +349,7 @@ function Portfolio() {
         <div className="w-[122px] h-11 relative">
           <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black  text-sm font-normal font-['Inter'] leading-none ">
             {" "}
-            <div to="/portfolio">Explore All More</div>{" "}
+            <Link href="/portfolio">Explore All</Link>{" "}
           </button>
         </div>
       </div>

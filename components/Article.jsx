@@ -4,14 +4,15 @@ import article2 from "../public/assets/articalimgs/artical2.jpg";
 import article3 from "../public/assets/articalimgs/artical3.jpg";
 import article4 from "../public/assets/articalimgs/artical4.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 function Article() {
   return (
-    <div className="w-[100%] flex flex-col justify-center items-center mt-20">
+    <div className="w-[100%] flex flex-col justify-center items-center dark:bg-black pt-20">
       <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
-          <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
-            Defination
+          <div className="w-full left-0 top-[2.1rem] absolute text-blue-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+            Definitions
           </div>
           <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
             Articles
@@ -239,10 +240,10 @@ function Article() {
                     */}
       </div>
 
-      <div className="w-[122px] h-11 relative mt-20">
-        <button className="w-[122px] h-11  bg-zinc-950 rounded-[10px] text-center text-white text-xs md:text-sm font-normal font-['Inter'] leading-none ">
+      <div className="w-[122px] h-11 relative pt-10">
+        <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black  text-sm font-normal font-['Inter'] leading-none ">
           {" "}
-          <div to="/articles">View More</div>{" "}
+          <Link href="/articles">Explore All</Link>{" "}
         </button>
       </div>
     </div>

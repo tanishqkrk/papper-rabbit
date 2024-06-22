@@ -9,6 +9,7 @@ import blog4 from "../../public/assets/blogsimg/blog4.png";
 // import more from "../../public/assets/blogsimg/Vector.svg";
 // import { Link } from "react-router-dom";
 import Image from "next/image";
+import Link from "next/link";
 
 function Blog() {
   const cardsinfo = [
@@ -63,11 +64,11 @@ function Blog() {
   ];
 
   return (
-    <div className="w-full  relative flex flex-col items-center justify-start mt-10 lg:mt-20 ">
+    <div className="w-full  relative flex flex-col items-center justify-start dark:bg-black ">
       <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
           <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
-            defination
+            Expressions
           </div>
           <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
             blog
@@ -195,10 +196,10 @@ function Blog() {
         })}
       </div>
 
-      <div className="w-[122px] h-11 relative mt-20">
-        <button className="w-[122px] h-11  bg-zinc-950 rounded-[10px] text-center text-white text-xs md:text-sm font-normal font-['Inter'] leading-none ">
+      <div className="w-[122px] h-11 relative pt-10">
+        <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black  text-sm font-normal font-['Inter'] leading-none ">
           {" "}
-          <div to="/blogs">View More</div>{" "}
+          <Link href="/blogs">Explore All</Link>{" "}
         </button>
       </div>
     </div>

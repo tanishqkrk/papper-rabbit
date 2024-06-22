@@ -82,11 +82,11 @@ function Services() {
   ];
 
   return (
-    <div className="w-full z-20 lg:h-[70%] relative flex flex-col items-center  justify-start ">
+    <div className="w-full dark:bg-black z-20 lg:h-[70%] relative flex flex-col items-center  justify-start ">
       <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
-          <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
-            Advertising
+          <div className="w-full left-0 top-[2.1rem] absolute text-teal-300 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+            Channels
           </div>
           <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
             services
@@ -161,7 +161,7 @@ function Services() {
       <div className="w-[122px] h-11 relative">
         <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black text-xs md:text-sm font-normal font-['Inter'] leading-none  cursor-pointer">
           {" "}
-          <div to="/services"> View More</div>{" "}
+          <Link href="/services"> Explore all</Link>{" "}
         </button>
       </div>
 

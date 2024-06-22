@@ -25,8 +25,8 @@ export default function Home() {
       <Hutchicons />
       <Services />
       <Clients />
-      <GlobalTraction />
       <Portfolio />
+      <GlobalTraction />
       <Review />
       <Cta />
       <Blog />
