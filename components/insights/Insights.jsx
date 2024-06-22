@@ -6,14 +6,15 @@ import insight3 from "../../public/assets/insights/insights3.jpg";
 import insight4 from "../../public/assets/insights/insights4.jpg";
 import InsightsCards from "./InsightsCards";
 import Image from "next/image";
+import Link from "next/link";
 // import { Link } from "react-router-dom";
 
 function Insights() {
   return (
-    <div className="w-full relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex mt-20">
+    <div className="w-full relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex dark:bg-black ">
       <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
-          <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+          <div className="w-full left-0 top-[2.1rem] absolute text-teal-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
             Advertising
           </div>
           <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
@@ -90,10 +91,10 @@ function Insights() {
         <InsightsCards insightimg={insight2} />
       </div>
 
-      <div className="w-[122px] h-11 relative mt-20">
-        <button className="w-[122px] h-11  bg-zinc-950 rounded-[10px] text-center text-white text-xs md:text-sm font-normal font-['Inter'] leading-none ">
+      <div className="w-[122px] h-11 relative pt-10 ">
+        <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black  text-sm font-normal font-['Inter'] leading-none ">
           {" "}
-          <div to="/insight">View More</div>{" "}
+          <Link href="/insight">Explore All</Link>{" "}
         </button>
       </div>
     </div>

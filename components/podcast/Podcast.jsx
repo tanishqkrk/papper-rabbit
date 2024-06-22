@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import { Link } from "react-router-dom";
 import PodcastCards from "./PodcastCards";
 import podcastimg1 from "../../public/assets/podcastimg/img.png";
 import podcastimg2 from "../../public/assets/podcastimg/img2.png";
 import podcastimg3 from "../../public/assets/podcastimg/img3.png";
 import podcastimg4 from "../../public/assets/podcastimg/img4.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function Podcast() {
   return (
@@ -84,10 +84,10 @@ function Podcast() {
         <PodcastCards podcastimg={podcastimg3} />
       </div>
 
-      <div className="w-[122px] h-11 relative mt-20">
-        <button className="w-[122px] h-11  bg-zinc-950 rounded-[10px] text-center text-white text-xs md:text-sm font-normal font-['Inter'] leading-none ">
+      <div className="w-[122px] h-11 relative pt-10 pb-20">
+        <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black  text-sm font-normal font-['Inter'] leading-none ">
           {" "}
-          <div to="/podcast">View More</div>{" "}
+          <Link href="/podcast">Explore All</Link>{" "}
         </button>
       </div>
     </div>

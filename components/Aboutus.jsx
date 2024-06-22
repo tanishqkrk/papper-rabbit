@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Aboutus() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center mt-20 ">
+    <div className="w-full h-full flex flex-col items-center justify-center dark:bg-black ">
       <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
           <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">

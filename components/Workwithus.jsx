@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Workwithus() {
   return (
-    <div className="w-full flex justify-center items-center mt-20 ">
+    <div className="w-full flex justify-center items-center dark:bg-black ">
       <div className="lg:w-[56%] mac:w-[74%] lg:h-80 w-full h-72 relative mx-5 my-8 text-center flex flex-col lg:flex-row mac:flex-row mac:gap-10 items-center lg:justify-between justify-center ">
         <Image
           className="lg:w-[1420px] lg:h-80 w-full  z-[1] h-72 left-0 top-0 absolute rounded-[20px] "
