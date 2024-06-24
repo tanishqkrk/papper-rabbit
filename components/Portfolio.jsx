@@ -1,15 +1,54 @@
-import React from "react";
+"use client";
+import React, { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import portfolio1 from "../public/assets/portfolioimg/portfolio1.jpg";
 import portfolio2 from "../public/assets/portfolioimg/portfolio2.jpg";
 import Image from "next/image";
 import Link from "next/link";
-// import portfolio3 from '../../assets/portfolioimg/portfolio3.jpg';
-// import portfolio4 from '../../assets/portfolioimg/portfolio4.jpg';
 
-function Portfolio() {
+const Portfolio = () => {
+  const sectionRef = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const variants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   return (
-    <div className="w-[100%] lg:h-[100%] relative flex flex-col dark:bg-black items-center justify-center h-full ">
-      <div className="w-[100%]  lg:h-[1020px] mac:h-[1020px]  flex-col justify-start items-center gap-[50px] inline-flex p-10 sm:p-2">
+    <div
+      ref={sectionRef}
+      className="w-[100%] lg:h-[100%] relative flex flex-col dark:bg-black items-center justify-center h-full"
+    >
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={variants}
+        className="w-[100%] lg:h-[1020px] mac:h-[1020px] flex-col justify-start items-center gap-[50px] inline-flex p-10 sm:p-2"
+      >
         <div className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
           <div className="w-full h-[6rem] relative content-center">
             <div className="w-full left-0 top-[2.1rem] absolute text-yellow-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
@@ -352,9 +391,9 @@ function Portfolio() {
             <Link href="/portfolio">Explore All</Link>{" "}
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
-}
+};
 
 export default Portfolio;
