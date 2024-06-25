@@ -427,3 +427,10 @@ body {
   white-space: nowrap;
   animation: infinite-scroll-left-to-right 30s linear infinite;
 }
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(255, 192, 203, 0.24),
+    0 17px 50px 0 rgba(255, 192, 203, 0.8);
+  border: 2px solid pink;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import ctaimg from "../public/assets/workwithus/workwithus.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import "./styles.css";
 
 function Cta() {
   return (
@@ -30,12 +31,12 @@ function Cta() {
         </div>
         <div className="relative flex flex-col items-center justify-center gap-4">
           <Link href="/contactus">
-            <button className="lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] sm:w-[5rem] relative text-xs bg-zinc-950 dark:bg-white rounded-[10px] text-white dark:text-black lg:text-sm font-bold font-['Inter'] leading-[30px] justify-center items-center inline-flex">
+            <button className=" button2 lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] sm:w-[5rem] relative text-xs bg-zinc-950 dark:bg-white rounded-[10px] text-white dark:text-black lg:text-sm font-bold font-['Inter'] leading-[30px] justify-center items-center inline-flex hover:shadow-pink">
               Know More
             </button>
           </Link>
           <Link href="/contactus">
-            <button className="lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] sm:w-[5rem] relative text-xs bg-zinc-950 dark:bg-white rounded-[10px] text-white dark:text-black lg:text-sm font-bold font-['Inter'] leading-[30px] justify-center items-center inline-flex">
+            <button className="button2 lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] sm:w-[5rem] relative text-xs bg-zinc-950 dark:bg-white rounded-[10px] text-white dark:text-black lg:text-sm font-bold font-['Inter'] leading-[30px] justify-center items-center block-bg inline-flex ">
               Reach Us
             </button>
           </Link>
