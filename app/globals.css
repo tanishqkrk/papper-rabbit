@@ -348,6 +348,30 @@ body {
   animation: colorchange 10s infinite alternate;
 }
 
+/* Add this CSS to your global stylesheet or inside a <style jsx> block if using styled-jsx */
+
+.text-custom-color .word-1 {
+  animation: colorchange 6s infinite;
+}
+
+.text-custom-color .word-2 {
+  animation: colorchange 6s infinite 2s;
+}
+
+.text-custom-color .word-3 {
+  animation: colorchange 6s infinite 4s;
+}
+
+@keyframes colorchange {
+  0%,
+  100% {
+    color: black;
+  }
+  33.33% {
+    color: pink;
+  }
+}
+
 .show {
   visibility: visible;
 }
