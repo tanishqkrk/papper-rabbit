@@ -18,17 +18,19 @@ const Portfolio = () => {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.1,
+        threshold: 0.5, // Adjust as needed
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSection = sectionRef.current;
+
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);

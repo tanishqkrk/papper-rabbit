@@ -90,3 +90,29 @@ body {
     width: calc((100% - 200px) / 2); /* Adjust based on the image width */
   }
 }
+
+@keyframes infinite-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes infinite-scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-infinite-scroll-left {
+  animation: infinite-scroll-left 20s linear infinite;
+}
+
+.animate-infinite-scroll-right {
+  animation: infinite-scroll-right 20s linear infinite;
+}

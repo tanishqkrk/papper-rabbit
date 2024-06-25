@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef, useEffect, useState } from "react";
 import review1 from "../public/assets/review/review1.jpg";
 import review2 from "../public/assets/review/review2.jpg";
 import review3 from "../public/assets/review/review3.jpg";
@@ -7,11 +8,43 @@ import review5 from "../public/assets/review/img.png";
 
 import ReviewCards from "./ReviewCards";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function Review() {
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5, // Adjust as needed
+      }
+    );
+
+    const currentSection = sectionRef.current;
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
+
   return (
-    <div className="w-full dark:bg-black pt-10  relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex">
-      <div className="w-full  relative flex flex-col justify-center items-center pt-10 lg:pt-20">
+    <div
+      className="w-full dark:bg-black pt-10 relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex"
+      ref={sectionRef}
+    >
+      <div className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
           <div className="w-full left-0 top-[2.1rem] absolute text-purple-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
             Reviews
@@ -22,15 +55,19 @@ function Review() {
         </div>
       </div>
 
-      {/* <div className="w-full h-[464.95px] pt-8 pb-[32.95px] justify-end items-center inline-flex"> */}
       <div className="w-full h-[360px] relative flex items-start gap-4 overflow-x-scroll no-scrollbar mt-10">
-        <div className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end ml-[13%] ">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: inView ? 1 : 0, y: 0 }}
+          transition={{ delay: 0.65, duration: 0.5 }}
+          className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end ml-[13%]"
+        >
           <Image
-            className="lg:w-[340px]  w-[306px] h-[360px] absolute  rounded-[20px]"
+            className="lg:w-[340px] w-[306px] h-[360px] absolute rounded-[20px]"
             src={review1}
             alt="review image1"
           />
-          <div className="  lg:w-[340px]  w-[306px] bg-white dark:bg-black bg-opacity-5 backdrop-blur-xl dark:bg-opacity-5 dark:backdrop-blur-xl  opacity-95 rounded-[10px] p-4 m-4 relative text-justify h-[180px]">
+          <div className="lg:w-[340px] w-[306px] bg-white dark:bg-black bg-opacity-5 backdrop-blur-xl dark:bg-opacity-5 dark:backdrop-blur-xl opacity-95 rounded-[10px] p-4 m-4 relative text-justify h-[180px]">
             <span className="text-zinc-950 dark:text-white text-sm font-bold font-['Inter']">
               Flexinutria{" "}
             </span>
@@ -43,7 +80,7 @@ function Review() {
             <span className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter']">
               Company <br />
             </span>
-            <div className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter'] leading-1 mt-3  h-[115px] overflow-y-scroll pr-1">
+            <div className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter'] leading-1 mt-3 h-[115px] overflow-y-scroll pr-1">
               Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Deleniti, minima ex libero ipsa quo impedit quibusdam atque alias
               vel, nihil aliquam adipisci veritatis odit. Eos rem dignissimos
@@ -54,15 +91,20 @@ function Review() {
               minim veniam.
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <ReviewCards review1={review2} />
-        <ReviewCards review1={review3} />
-        <ReviewCards review1={review4} />
-        <ReviewCards review1={review5} />
-        <ReviewCards review1={review3} />
+        {[review2, review3, review4, review5, review3].map((review, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: inView ? 1 : 0, y: 0 }}
+            transition={{ delay: 0.85 + index * 0.2, duration: 0.5 }}
+            className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end"
+          >
+            <ReviewCards review1={review} />
+          </motion.div>
+        ))}
       </div>
-      {/* </div> */}
     </div>
   );
 }
