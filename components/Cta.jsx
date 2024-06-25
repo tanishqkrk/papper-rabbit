@@ -6,7 +6,7 @@ import Link from "next/link";
 function Cta() {
   return (
     <div className="w-full flex dark:bg-black justify-center items-center pt-10 pb-10">
-      <div className="lg:w-[56%] mac:w-[74%] lg:h-80 w-full h-72 relative mx-5 my-8 text-center flex flex-col lg:flex-row mac:flex-row mac:gap-10 items-center lg:justify-between justify-center">
+      <div className="lg:w-[70%] mac:w-[74%] lg:h-80 w-full h-72 relative mx-5 my-8 text-center flex flex-col lg:flex-row mac:flex-row mac:gap-10 items-center lg:justify-between justify-center">
         <Image
           className="lg:w-[1420px] lg:h-80 w-full h-72 left-0 top-0 absolute rounded-[20px]"
           src={ctaimg}

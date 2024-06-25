@@ -395,3 +395,35 @@ body {
 .nav-items:hover {
   display: block;
 }
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.mask-gradient {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+@keyframes infinite-scroll-left-to-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-infinite-scroll-left-to-right {
+  display: flex;
+  white-space: nowrap;
+  animation: infinite-scroll-left-to-right 30s linear infinite;
+}
