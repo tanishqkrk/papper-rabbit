@@ -43,11 +43,9 @@ const Portfolio = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-[100%] lg:h-[100%] relative flex flex-col dark:bg-black items-center justify-center h-full"
+      className="w-[100%] lg:h-[100%] relative flex flex-col dark:bg-black items-center pb-10  justify-center h-full"
     >
-      <motion.div
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+      <div
         variants={variants}
         className="w-[100%] lg:h-[1020px] mac:h-[1020px] flex-col justify-start items-center gap-[50px] inline-flex p-10 sm:p-2"
       >
@@ -62,7 +60,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="lg:w-[57%]  mac:w-[79%] w-[100%]  lg:h-[700px] mac:h-[90%] h-[950px] sm:h-[700px] sm:p-0 relative gap-4 sm:gap-1 md:gap-1 lg:grid lg:grid-cols-4 lg:grid-rows-2 mac:grid-cols-4 mac:grid-rows-2 grid grid-cols-2 grid-rows-4">
+        <div className="  lg:h-[700px] mac:h-[90%] h-[950px] sm:h-[700px] sm:p-0 relative gap-4 sm:gap-1 md:gap-1 lg:grid lg:grid-cols-4 lg:grid-rows-2 mac:grid-cols-4 mac:grid-rows-2 grid grid-cols-2 grid-rows-4">
           <div className="w-full h-full m-1 group/items bg-cover relative rounded-[20px] col-span-2">
             <Image
               className=" w-full h-full rounded-[20px]   relative"
@@ -387,13 +385,13 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="w-[122px] h-11 relative">
+        <div className="w-[122px] h-11  pb-10 relative">
           <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black  text-sm font-normal font-['Inter'] leading-none ">
             {" "}
             <Link href="/portfolio">Explore All</Link>{" "}
           </button>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

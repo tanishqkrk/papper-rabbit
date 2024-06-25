@@ -5,7 +5,7 @@ import review2 from "../public/assets/review/review2.jpg";
 import review3 from "../public/assets/review/review3.jpg";
 import review4 from "../public/assets/review/review4.png";
 import review5 from "../public/assets/review/img.png";
-
+import "./styles.css";
 import ReviewCards from "./ReviewCards";
 import Image from "next/image";
 import { motion } from "framer-motion";
