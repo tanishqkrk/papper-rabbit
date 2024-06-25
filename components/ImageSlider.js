@@ -60,6 +60,7 @@ export default function ImageSlider() {
       modules={[EffectFade, Navigation, Pagination]}
       className="mySwiper"
       onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
+      style={{ height: '100vh' }}
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
