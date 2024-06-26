@@ -20,7 +20,7 @@ export default function Banner() {
           y: 0,
         }}
         transition={{
-          duration: 1,
+          duration: 2,
           type: "spring",
         }}
         className="banner z-[99999999999999] w-screen h-screen bg-theme text-white flex justify-center items-center fixed top-0 left-0"

@@ -4,7 +4,7 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
 import { Providers } from "../../Providers";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,16 +17,14 @@ export default function RootLayout({ children }) {
       <motion.div
         initial={{
           opacity: 0,
-          y: 500, // Start 50px below its final position
         }}
         animate={{
           opacity: 1,
-          y: 0, // Slide to its final position
         }}
         transition={{
-          duration: 3, // Adjust the duration to make it smoother
+          duration: 2, // Adjust the duration to make it smoother
           ease: "easeOut", // You can change the easing function as needed
-          delay: .5
+          delay: 0.5
         }}
       >
         {children}
