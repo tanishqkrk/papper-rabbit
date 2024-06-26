@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import insight1 from "../../public/assets/insights/insights1.jpg";
 import insight2 from "../../public/assets/insights/insights2.jpg";
 import insight3 from "../../public/assets/insights/insights3.jpg";
@@ -7,11 +7,52 @@ import insight4 from "../../public/assets/insights/insights4.jpg";
 import InsightsCards from "./InsightsCards";
 import Image from "next/image";
 import Link from "next/link";
-// import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Insights() {
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5, // Adjust as needed
+      }
+    );
+
+    const currentSection = sectionRef.current;
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
+
+  const insights = [
+    insight1,
+    insight2,
+    insight3,
+    insight4,
+    insight2,
+    insight3,
+    insight4,
+  ];
+
   return (
-    <div className="w-full relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex dark:bg-black ">
+    <div
+      className="w-full relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex dark:bg-black"
+      ref={sectionRef}
+    >
       <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div className="w-full h-[6rem] relative content-center">
           <div className="w-full left-0 top-[2.1rem] absolute text-teal-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
@@ -31,70 +72,36 @@ function Insights() {
         <br />
       </div>
 
-      <div className="w-full lg:h-[510px] mac:h-[460px] h-[400px] relative flex items-start gap-4 overflow-x-scroll no-scrollbar mt-10">
-        <div className="lg:w-[340px] mac:w-[306px] w-[240px] lg:h-[510px] mac:h-[460px] h-[400px] relative flex items-end justify-center lg:ml-[570px] ml-[13%] ">
-          {/* <div className="w-[66px] h-[65px] bg-black absolute bg-opacity-25 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px]" /> */}
-
-          <div className="absolute top-0 left-0 w-10 h-10 z-10 text-black dark:text-white lg:w-16 lg:h-16 mac:w-14 mac:h-14 flex flex-col items-center justify-center text-[12px] lg:text-[32px] mac:text-[26px] font-bold font-['Katibeh'] rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px]">
-            <div className="w-full h-full absolute rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] " />
-            334
-          </div>
-
-          <Image
-            className="lg:w-[340px]  mac:w-[306px] w-[240px] lg:h-[510px] mac:h-[460px] h-[400px] absolute  rounded-[20px]"
-            src={insight1}
-            alt="review image1"
-          />
-          <div className=" lg:w-[340px]  mac:w-[306px] w-[240px] bg-white dark:bg-black bg-opacity-5 backdrop-blur-xl dark:bg-opacity-5 dark:backdrop-blur-xl  opacity-95 rounded-[10px] p-4 m-2 relative text-justify h-[250px]">
-            <div className="absolute top-[-1.5rem] z-10 w-[90px] h-6 bg-red-200 rounded-tl-[10px] rounded-tr-[10px] backdrop-blur-[20px] items-center justify-center flex">
-              New
-            </div>
-
-            <div className="text-black dark:text-white  text-xl mac:text-lg md:text-sm sm:text-sm z-10 font-bold font-['Inter'] ">
-              Perspiciatis unde dolori Perspiciatis unde dolori
-            </div>
-            <div className="flex items-start justify-between mt-2">
-              <div className="flex text-justify">
-                <span className="text-black dark:text-white  text-[11px] font-bold font-['Inter'] ">
-                  Category -{" "}
-                </span>
-                <span className="text-black dark:text-white text-[11px] font-normal font-['Inter'] ">
-                  Lorem ipsum
-                </span>
-              </div>
-              <div className="flex text-justify">
-                <span className="text-black dark:text-white  text-[11px] font-bold font-['Inter'] ">
-                  Date -{" "}
-                </span>
-                <span className="text-black dark:text-white  text-[11px] font-normal font-['Inter'] ">
-                  DD/MM/YYYY
-                </span>
-              </div>
-            </div>
-            <div className="text-black dark:text-white  text-[12px] sm:text-xs md:text-xs font-normal font-['Inter'] leading-1 mt-3  h-[115px] overflow-y-scroll pr-1">
-              Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, minima ex libero ipsa quo impedit quibusdam atque alias
-              vel, nihil aliquam adipisci veritatis odit. Eos rem dignissimos
-              dolor alias iure? ipsum Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Pariatur officia eum beatae, fuga aliquid
-              similique nisi eligendi. dolor sit amet, aliqua. Ut enim ad minim
-              veniam. Ut enim ad minim veniam et dolore magna aliqua. Ut enim ad
-              minim veniam.
-            </div>
-          </div>
-        </div>
-
-        <InsightsCards insightimg={insight2} />
-        <InsightsCards insightimg={insight3} />
-        <InsightsCards insightimg={insight4} />
-        <InsightsCards insightimg={insight1} />
-        <InsightsCards insightimg={insight2} />
+      <div
+        x-data="{}"
+        x-init="$nextTick(() => {
+                        let ul = $refs.cards;
+                        ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                        ul.nextSibling.setAttribute('aria-hidden', 'true');
+                    })"
+        className="w-[100%] h-[540px] lg:w-[70%] mac:w-[85%] relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_left,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      >
+        <ul
+          x-ref="cards"
+          className="h-full flex items-center justify-center md:justify-start relative [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll-right"
+        >
+          {insights.map((insight, index) => (
+            <motion.li
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: inView ? 1 : 0, y: 0 }}
+              transition={{ delay: 0.3 + index * 0.2, duration: 0.5 }}
+              className="lg:w-[340px] w-[306px] h-full relative flex items-end justify-end p-4"
+            >
+              <InsightsCards insightimg={insight} />
+            </motion.li>
+          ))}
+        </ul>
       </div>
 
-      <div className="w-[122px] h-11 relative pt-10 ">
-        <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black  text-sm font-normal font-['Inter'] leading-none ">
-          {" "}
-          <Link href="/insight">Explore All</Link>{" "}
+      <div className="w-[122px] h-11 relative pt-10">
+        <button className="w-[122px] h-11 bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black text-sm font-normal font-['Inter'] leading-none">
+          <Link href="/insight">Explore All</Link>
         </button>
       </div>
     </div>

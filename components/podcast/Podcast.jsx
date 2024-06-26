@@ -84,7 +84,7 @@ function Podcast() {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: inView ? 1 : 0, y: 0 }}
-              transition={{ delay: 0.85 + index * 0.2, duration: 0.5 }}
+              transition={{ delay: 0.3 + index * 0.2, duration: 0.5 }}
               className="lg:w-[340px] w-[306px] h-full relative flex items-end justify-end"
             >
               <PodcastCards podcastimg={podcast} />
