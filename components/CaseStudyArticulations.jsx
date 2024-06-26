@@ -56,7 +56,7 @@ export default function ImageSlider() {
                 src={image.src}
                 alt={`Slide ${index + 1}`}
                 width={500} // Adjust width and height to desired values
-                height={500} // Adjust width and height to desired values
+                height={600} // Adjust width and height to desired values
                 objectFit="contain"
               />
             </div>

@@ -47,8 +47,8 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 500px; /* Adjust the width as needed */
-  height: 500px; /* Adjust the height as needed */
   margin: auto;
+  gap: 20px;
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -89,7 +89,6 @@ body {
 @media (max-width: 768px) {
   .image-container {
     width: 300px; /* Adjust for smaller screens */
-    height: 300px; /* Adjust for smaller screens */
   }
 
   .swiper-button-next,
@@ -101,7 +100,6 @@ body {
 @media (max-width: 480px) {
   .image-container {
     width: 200px; /* Adjust for smaller screens */
-    height: 200px; /* Adjust for smaller screens */
   }
 
   .swiper-button-next,
