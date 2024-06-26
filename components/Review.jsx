@@ -39,6 +39,8 @@ function Review() {
     };
   }, []);
 
+  const reviews = [review1, review2, review3, review4, review5, review3];
+
   return (
     <div
       className="w-full dark:bg-black pt-10 relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex"
@@ -55,55 +57,68 @@ function Review() {
         </div>
       </div>
 
-      <div className="w-full h-[360px] relative flex items-start gap-4 overflow-x-scroll no-scrollbar mt-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: inView ? 1 : 0, y: 0 }}
-          transition={{ delay: 0.65, duration: 0.5 }}
-          className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end ml-[13%]"
+      <div
+        x-data="{}"
+        x-init="$nextTick(() => {
+                        let ul = $refs.cards;
+                        ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                        ul.nextSibling.setAttribute('aria-hidden', 'true');
+                    })"
+        className="w-[100%] h-[540px] lg:w-[70%] mac:w-[85%] relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_left,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      >
+        <ul
+          x-ref="cards"
+          className="h-full flex items-center justify-center md:justify-start relative [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll-right"
         >
-          <Image
-            className="lg:w-[340px] w-[306px] h-[360px] absolute rounded-[20px]"
-            src={review1}
-            alt="review image1"
-          />
-          <div className="lg:w-[340px] w-[306px] bg-white dark:bg-black bg-opacity-5 backdrop-blur-xl dark:bg-opacity-5 dark:backdrop-blur-xl opacity-95 rounded-[10px] p-4 m-4 relative text-justify h-[180px]">
-            <span className="text-zinc-950 dark:text-white text-sm font-bold font-['Inter']">
-              Flexinutria{" "}
-            </span>
-            <span className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter']">
-              |
-            </span>
-            <span className="text-zinc-950 dark:text-white text-sm font-bold font-['Inter']">
-              {" "}
-            </span>
-            <span className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter']">
-              Company <br />
-            </span>
-            <div className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter'] leading-1 mt-3 h-[115px] overflow-y-scroll pr-1">
-              Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, minima ex libero ipsa quo impedit quibusdam atque alias
-              vel, nihil aliquam adipisci veritatis odit. Eos rem dignissimos
-              dolor alias iure? ipsum Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Pariatur officia eum beatae, fuga aliquid
-              similique nisi eligendi. dolor sit amet, aliqua. Ut enim ad minim
-              veniam. Ut enim ad minim veniam et dolore magna aliqua. Ut enim ad
-              minim veniam.
-            </div>
-          </div>
-        </motion.div>
-
-        {[review2, review3, review4, review5, review3].map((review, index) => (
-          <motion.div
-            key={index}
+          <motion.li
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: inView ? 1 : 0, y: 0 }}
-            transition={{ delay: 0.85 + index * 0.2, duration: 0.5 }}
-            className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end"
+            transition={{ delay: 0.65, duration: 0.5 }}
+            className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end ml-[13%] p-4"
           >
-            <ReviewCards review1={review} />
-          </motion.div>
-        ))}
+            <Image
+              className="lg:w-[340px] w-[306px] h-[360px] absolute rounded-[20px]"
+              src={review1}
+              alt="review image1"
+            />
+            <div className="lg:w-[340px] w-[306px] bg-white dark:bg-black bg-opacity-5 backdrop-blur-xl dark:bg-opacity-5 dark:backdrop-blur-xl opacity-95 rounded-[10px] p-4 m-4 relative text-justify h-[180px]">
+              <span className="text-zinc-950 dark:text-white text-sm font-bold font-['Inter']">
+                Flexinutria{" "}
+              </span>
+              <span className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter']">
+                |
+              </span>
+              <span className="text-zinc-950 dark:text-white text-sm font-bold font-['Inter']">
+                {" "}
+              </span>
+              <span className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter']">
+                Company <br />
+              </span>
+              <div className="text-zinc-950 dark:text-white text-sm font-normal font-['Inter'] leading-1 mt-3 h-[115px] overflow-y-scroll pr-1">
+                Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Deleniti, minima ex libero ipsa quo impedit quibusdam atque
+                alias vel, nihil aliquam adipisci veritatis odit. Eos rem
+                dignissimos dolor alias iure? ipsum Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Pariatur officia eum beatae, fuga
+                aliquid similique nisi eligendi. dolor sit amet, aliqua. Ut enim
+                ad minim veniam. Ut enim ad minim veniam et dolore magna aliqua.
+                Ut enim ad minim veniam.
+              </div>
+            </div>
+          </motion.li>
+
+          {reviews.map((review, index) => (
+            <motion.li
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: inView ? 1 : 0, y: 0 }}
+              transition={{ delay: 0.85 + index * 0.2, duration: 0.5 }}
+              className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end p-4"
+            >
+              <ReviewCards review1={review} />
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </div>
   );
