@@ -6,7 +6,7 @@ import day1 from "../../public/assets/bannerimgs/1 background.svg";
 import day2 from "../../public/assets/bannerimgs/2 background.svg";
 import day3 from "../../public/assets/bannerimgs/3background.svg";
 
-import arrowleft from "../../public/assets/bannerimgs/left arrow.svg";
+import arrowleft from "../../public/assets/bannerimgs/left arrow.png";
 import arrowright from "../../public/assets/bannerimgs/right arrow.png";
 import FirstPage from "./FirstPage";
 import SecondPage from "./SecondPage";
@@ -71,7 +71,7 @@ function Hutchicons() {
 
       <button
         onClick={navigatePrevious}
-        className="mac:left-10 mac:top-[50%] lg:left-10 lg:top-[50%] bottom-10 left-10 z-20 absolute w-8 h-8 sm:hidden"
+        className="mac:left-10 mac:top-[50%] lg:left-10 lg:top-[50%] bottom-10 left-10 z-20 absolute w-14 h-12 sm:hidden"
       >
         <Image
           className="justify-center items-center inline-flex"
