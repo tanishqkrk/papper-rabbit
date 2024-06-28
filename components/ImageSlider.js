@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -33,6 +33,9 @@ import dark7 from '../public/assets/bannerimgs/7 background-dark.png';
 import dark8 from '../public/assets/bannerimgs/8 background-dark.png';
 import dark9 from '../public/assets/bannerimgs/9 background-dark.png';
 
+import arrowleft from "../public/assets/bannerimgs/leftsvg.svg";
+import arrowright from "../public/assets/bannerimgs/rightsvg.svg";
+
 export default function ImageSlider() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -54,7 +57,10 @@ export default function ImageSlider() {
     <Swiper
       spaceBetween={30}
       effect={'fade'}
-      navigation={true}
+      navigation={{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }}
       loop={true}
       pagination={{ clickable: true }}
       modules={[EffectFade, Navigation, Pagination]}
@@ -92,6 +98,12 @@ export default function ImageSlider() {
           </div>
         </SwiperSlide>
       ))}
+      <div className="swiper-button-prev">
+        <Image src={arrowleft} alt="Previous" width={80} height={80} />
+      </div>
+      <div className="swiper-button-next">
+        <Image src={arrowright} alt="Next" width={50} height={50} />
+      </div>
     </Swiper>
   );
 }
