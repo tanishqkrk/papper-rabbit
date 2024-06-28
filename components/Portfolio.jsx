@@ -67,7 +67,7 @@ const Portfolio = () => {
               src={portfolio1}
               alt=""
             />
-            <div className="lg:w-[20rem] w-[57%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-red-200 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight  ">
+            <div className="lg:w-[20rem] w-[35%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-red-200 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight  ">
               Take A Look
             </div>
 
@@ -122,7 +122,7 @@ const Portfolio = () => {
               alt=""
             />
             <div className=" w-full h-full -z-10 left-0 top-0  absolute rounded-[20px]" />
-            <div className="lg:w-[20rem] w-[57%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-violet-300 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight">
+            <div className="lg:w-[20rem] w-[75%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-violet-300 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight">
               Take A Look
             </div>
             <div className="w-full h-full absolute z-20 top-0 left-0 text-xs sm:text-[10px] md:text-[10px]  p-2 bg-violet-300 rounded-[20px] flex flex-col items-center justify-center invisible group-hover/items:visible">
@@ -176,7 +176,7 @@ const Portfolio = () => {
               alt=""
             />
             <div className=" w-full h-full -z-10 left-0 top-0  absolute rounded-[20px]" />
-            <div className="lg:w-[20rem] w-[57%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-violet-300 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight">
+            <div className="lg:w-[20rem] w-[75%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-violet-300 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight">
               Take A Look
             </div>
             <div className="w-full h-full absolute z-20 top-0 left-0 text-xs sm:text-[10px] md:text-[10px]  p-2 bg-violet-300 rounded-[20px] flex flex-col items-center justify-center invisible group-hover/items:visible">
@@ -229,7 +229,7 @@ const Portfolio = () => {
               alt=""
             />
             <div className=" w-full h-full -z-10 left-0 top-0  absolute rounded-[20px]" />
-            <div className="lg:w-[20rem] w-[57%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-violet-300 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight">
+            <div className="lg:w-[20rem] w-[75%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-violet-300 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight">
               Take A Look
             </div>
             <div className="w-full h-full absolute z-20 top-0 left-0 text-xs sm:text-[10px] md:text-[10px]  p-2 bg-violet-300 rounded-[20px] flex flex-col items-center justify-center invisible group-hover/items:visible">
@@ -283,7 +283,7 @@ const Portfolio = () => {
               alt=""
             />
             <div className=" w-full h-full -z-10 left-0 top-0  absolute rounded-[20px]" />
-            <div className="lg:w-[20rem] w-[57%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-violet-300 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight">
+            <div className="lg:w-[20rem] w-[75%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-violet-300 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight">
               Take A Look
             </div>
             <div className="w-full h-full absolute z-20 top-0 left-0 text-xs sm:text-[10px] md:text-[10px]  p-2 bg-violet-300 rounded-[20px] flex flex-col items-center justify-center invisible group-hover/items:visible">
@@ -336,7 +336,7 @@ const Portfolio = () => {
               src={portfolio1}
               alt=""
             />
-            <div className="lg:w-[20rem] w-[57%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-red-200 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight  ">
+            <div className="lg:w-[20rem] w-[35%] lg:h-[50px] h-[40px] right-0 bottom-0 absolute bg-red-200 bg-opacity-50 rounded-tl-[20px] rounded-br-[20px] backdrop-blur-[20px] justify-center items-center flex text-center text-white lg:text-lg text-xs sm:text-[10px] md:text-[10px]  font-bold font-['Inter'] leading-tight  ">
               Take A Look
             </div>
 
