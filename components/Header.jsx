@@ -9,12 +9,14 @@ import darkimg from "../public/assets/headerimg/night.svg";
 import darkpr from "../public/assets/headerimg/PR2.svg";
 import lightpr from "../public/assets/headerimg/PR.svg";
 import search from "../public/assets/portfolioimg/Icons/search_24px.svg";
-import Hutch from "./subnavbars/Hutch";
+import searchHutch from "./subnavbars/Hutch";
+import Dark from "../public/assets/portfolioimg/Icons/search_dark.png";
 import Services from "./subnavbars/Services";
 import Portfolio from "./subnavbars/Portfolio";
 import Lounge from "./subnavbars/Lounge";
 import { AppContext } from "@/context/DataContext";
 import PopupMenu from "./popupmenu/PopupMenu";
+import Hutch from "./subnavbars/Hutch";
 
 function Header(props) {
   const { mode, container, popup, visible } = useContext(AppContext);
@@ -204,7 +206,11 @@ function Header(props) {
           ) : (
             <div className="w-6 h-6 bg-gray-400 rounded-full" />
           )}
-          <Image className="w-7 h-7" src={search} alt="Search" />
+          <Image
+            className="w-7 h-7"
+            src={theme === "light" ? search : Dark}
+            alt="Search"
+          />
           <Image
             className="block-bg w-9 h-9"
             src={theme === "light" ? darkpr : lightpr}
