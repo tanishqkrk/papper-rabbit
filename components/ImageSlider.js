@@ -79,7 +79,7 @@ export default function ImageSlider() {
                 <div className="relative mt-[6px] mr-[22px] text-5xl sm:text-[45px] lg:text-8xl mac:text-7xl font-['Revelstoke'] text-black dark:text-white">{title[currentIndex]}!</div>
                 <div className="relative mt-[10px] ml-[20px] mr-[22px] text-[14px] sm:text-[14px] lg:text-[15px] font-['Inter'] text-black dark:text-white">We are brand enthusiasts. We are storytellers. We are a full-service creative agency combining strategic thinking and sharp design to build great brands in this cutthroat business competition.</div>
                 <div className="relative mt-[10px] mr-[22px] text-[32px] sm:text-[30px] lg:text-5xl font-['Heaven'] text-black dark:text-white"># What makes you creative</div>
-                <div className="relative mt-[14px] h-[64px] w-[120px] lg:w-[122px] lg:h-11">
+                <div className="relative mr-[10px] mt-[14px] h-[64px] w-[120px] lg:w-[122px] lg:h-11">
                   <button className="w-[120px] lg:w-[122px] h-11 bg-zinc-950 dark:bg-white rounded-[10px] text-white dark:text-black text-xs lg:text-sm font-['Inter']">Let&apos;s Make Art</button>
                 </div>
               </div>
@@ -90,8 +90,8 @@ export default function ImageSlider() {
                 <div className="relative mt-[6px] ml-[22px] text-5xl sm:text-[45px] lg:text-8xl mac:text-7xl font-['Revelstoke'] text-black dark:text-white">{title[currentIndex]}!</div>
                 <div className="relative mt-[10px] ml-[22px] mr-[20px] text-[14px] sm:text-[14px] lg:text-[15px] font-['Inter'] text-black dark:text-white">We are brand enthusiasts. We are storytellers. We are a full-service creative agency combining strategic thinking and sharp design to build great brands in this cutthroat business competition.</div>
                 <div className="relative mt-[10px] ml-[22px] text-[32px] sm:text-[30px] lg:text-5xl font-['Heaven'] text-black dark:text-white"># What makes you creative</div>
-                <div className="relative mt-[14px] h-[64px] w-[120px] lg:w-[122px] lg:h-11">
-                  <button className="w-[120px] lg:w-[122px] h-11 bg-zinc-950 dark:bg-white rounded-[10px] text-white dark:text-black text-xs lg:text-sm font-['Inter']">Let&apos;s Make Art</button>
+                <div className="relative pl-[18px]  mt-[14px] h-[64px] w-[120px] lg:w-[122px] lg:h-11">
+                  <button className="w-[120px]  lg:w-[122px] h-11 bg-zinc-950 dark:bg-white rounded-[10px] text-white dark:text-black text-xs lg:text-sm font-['Inter']">Let&apos;s Make Art</button>
                 </div>
               </div>
             )}
