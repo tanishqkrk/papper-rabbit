@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
           ease: "easeOut", // You can change the easing function as needed
           delay: 0.5
         }}
+        className="overflow-x-hidden w-full"
       >
         {children}
       </motion.div>
