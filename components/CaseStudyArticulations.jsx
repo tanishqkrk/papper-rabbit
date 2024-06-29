@@ -15,7 +15,10 @@ import casestudyy from "../public/assets/casestudyimg/casestudyy.png";
 import img from "../public/assets/casestudyimg/img.png";
 import img2 from "../public/assets/casestudyimg/img2.png";
 
-export default function ImageSlider() {
+import arrowleft from "../public/assets/bannerimgs/leftsvg.svg";
+import arrowright from "../public/assets/bannerimgs/rightsvg.svg";
+
+export default function CaseStudySlider() {
   const [mounted, setMounted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -32,7 +35,10 @@ export default function ImageSlider() {
       <Swiper
         spaceBetween={30}
         effect={"fade"}
-        navigation={true}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
         loop={true}
         pagination={{ clickable: true }}
         modules={[EffectFade, Navigation, Pagination]}
@@ -62,6 +68,12 @@ export default function ImageSlider() {
             </div>
           </SwiperSlide>
         ))}
+        <div className="swiper-button-prev">
+          <Image src={arrowleft} alt="Previous" width={80} height={80} />
+        </div>
+        <div className="swiper-button-next">
+          <Image src={arrowright} alt="Next" width={50} height={50} />
+        </div>
       </Swiper>
     </div>
   );
