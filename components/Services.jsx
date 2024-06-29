@@ -134,7 +134,7 @@ function Services() {
                         ul.insertAdjacentHTML('afterend', ul.outerHTML);
                         ul.nextSibling.setAttribute('aria-hidden', 'true');
                     })"
-        className="w-[100%] h-[540px] lg:w-[70%] mac:w-[85%] relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_left,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+        className="w-[100%]  h-[620px] lg:w-[70%] mac:w-[85%] relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_left,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
       >
         <ul
           x-ref="cards"
@@ -143,12 +143,12 @@ function Services() {
           {cardsinfo.map((item) => (
             <li
               key={item.id}
-              className="group/items mac:min-w-[308px] min-w-[240px] lg:min-w-[340px] mac:h-[542px] sm:h-[420px] lg:h-[600px] relative snap-center snap-always"
+              className="group/items mac:min-w-[308px] min-w-[240px] lg:min-w-[340px]  relative snap-center snap-always"
             >
               <Image
                 src={item.image}
                 alt={item.name}
-                className="relative top-0 rounded-xl "
+                className="relative top-0 rounded-xl h-[598px]"
               />
               <div className="w-full pl-2 md:pl-6 md:pr-[35px] py-10 top-0 absolute rounded-[20px] flex-col justify-center items-start gap-2.5 inline-flex">
                 <div className="text-zinc-950 text-xs md:text-sm font-normal font-['Inter']">
@@ -209,7 +209,8 @@ function Services() {
               <Image
                 src={popupimg2}
                 alt=""
-                className="w-full h-full object-contain relative"
+                className="w-full h-full object-fit relative"
+                layout="responsive"
               />
             </div>
             <div className="w-[90%] md:w-[50%] justify-center p-4 relative">
