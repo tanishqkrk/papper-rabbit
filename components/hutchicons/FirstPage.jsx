@@ -11,7 +11,7 @@ import day9 from "../../public/assets/bannerimgs/9background.svg";
 import day10 from "../../public/assets/bannerimgs/10background.svg";
 import day11 from "../../public/assets/bannerimgs/11background.svg";
 
-import dark1 from "../../public/assets/bannerimgs/1-background-dark.png";
+import dark1 from "../../public/assets/bannerimgs/1-background-dark.svg";
 import dark2 from "../../public/assets/bannerimgs/2 background-dark.png";
 import dark3 from "../../public/assets/bannerimgs/3 background-dark.png";
 import dark4 from "../../public/assets/bannerimgs/4 background-dark.png";

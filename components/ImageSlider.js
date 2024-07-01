@@ -23,7 +23,7 @@ import day9 from '../public/assets/bannerimgs/9background.svg';
 import day10 from '../public/assets/bannerimgs/10background.svg';
 import day11 from '../public/assets/bannerimgs/11background.svg';
 
-import dark1 from '../public/assets/bannerimgs/1-background-dark.png';
+import dark1 from '../public/assets/bannerimgs/1-background-dark.svg';
 import dark2 from '../public/assets/bannerimgs/2 background-dark.png';
 import dark3 from '../public/assets/bannerimgs/3 background-dark.png';
 import dark4 from '../public/assets/bannerimgs/4 background-dark.png';
@@ -64,14 +64,14 @@ export default function ImageSlider() {
       loop={true}
       pagination={{ clickable: true }}
       modules={[EffectFade, Navigation, Pagination]}
-      className="mySwiper"
+      className="mySwiper "
       onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
-      style={{ height: '100vh' }}
+
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
           <div className="relative w-full h-full">
-            <Image src={image.src} alt={`Slide ${index + 1}`} layout="responsive" width={500} height={300} />
+            <Image src={image.src} alt={`Slide ${index + 1}`} layout="fill" objectFit='cover' />
             {currentIndex % 2 === 0 ? (
               <div className="absolute z-20 flex flex-col items-end justify-start w-[450px] sm:w-[90%] lg:w-[646px] mac:w-[546px] lg:right-[15rem] lg:bottom-[10rem] mac:right-52 mac:bottom-[6rem]">
                 <div className="absolute w-full h-full bg-white dark:bg-black bg-opacity-5 dark:bg-opacity-5 rounded-[20px] backdrop-blur-2xl" />
