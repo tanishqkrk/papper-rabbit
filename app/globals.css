@@ -82,6 +82,10 @@ body {
     src: url("../public/fonts/website fonts/Katibeh-Regular.ttf")
       format("opentype");
   }
+  @font-face {
+    font-family: "Inter";
+    src: url("../public/fonts/website fonts/Inter-Light.ttf") format("opentype");
+  }
 }
 
 @layer base {
