@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
 
   return (
     <main>
-      <Banner /> {/* Add the Banner component */}
+      <Banner />
       <Header />
       <motion.div
         initial={{

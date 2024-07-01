@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import './styles.css';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import Image from 'next/image';
+import Spinner from 'react-spinkit';
 
 // Importing images
 import day1 from '../public/assets/bannerimgs/1 background.svg';
@@ -40,6 +41,7 @@ export default function ImageSlider() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadingStates, setLoadingStates] = useState(Array(10).fill(true));
   const title = ['Brave', 'Creative', 'Loyal', 'Lorem1', 'Brave222', 'Creative222', 'Loyal2222', 'Lorem22', 'Patient22'];
 
   useEffect(() => setMounted(true), []);
@@ -48,6 +50,14 @@ export default function ImageSlider() {
   const images_dark = [dark1, dark2, dark3, dark4, dark5, dark6, dark7, dark8, dark9];
 
   const images = resolvedTheme === 'dark' ? images_dark : images_day;
+
+  const handleImageLoad = (index) => {
+    setLoadingStates((prevStates) => {
+      const newStates = [...prevStates];
+      newStates[index] = false;
+      return newStates;
+    });
+  };
 
   if (!mounted) {
     return null; // Avoid rendering during SSR
@@ -64,14 +74,25 @@ export default function ImageSlider() {
       loop={true}
       pagination={{ clickable: true }}
       modules={[EffectFade, Navigation, Pagination]}
-      className="mySwiper "
+      className="mySwiper"
       onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
-
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
           <div className="relative w-full h-full">
-            <Image src={image.src} alt={`Slide ${index + 1}`} layout="fill" objectFit='cover' />
+            {loadingStates[index] && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Spinner name="ball-spin-fade-loader" color="blue" />
+              </div>
+            )}
+            <Image
+              src={image.src}
+              alt={`Slide ${index + 1}`}
+              layout="fill"
+              objectFit="cover"
+              onLoadingComplete={() => handleImageLoad(index)}
+              className={`transition-opacity duration-500 ${loadingStates[index] ? 'opacity-0' : 'opacity-100'}`}
+            />
             {currentIndex % 2 === 0 ? (
               <div className="absolute z-20 flex flex-col items-end justify-start w-[450px] sm:w-[90%] lg:w-[646px] mac:w-[546px] lg:right-[15rem] lg:bottom-[10rem] mac:right-52 mac:bottom-[6rem]">
                 <div className="absolute w-full h-full bg-white dark:bg-black bg-opacity-5 dark:bg-opacity-5 rounded-[20px] backdrop-blur-2xl" />
