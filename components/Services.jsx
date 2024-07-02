@@ -155,9 +155,12 @@ function Services() {
           />
         </div>
 
-        {cardsinfo.map((item) => {
+        {cardsinfo.map((item, index) => {
           return (
-            <div className="mac:min-w-[308px] min-w-[240px]  lg:min-w-[340px]   mac:h-[542px] sm:h-[420px] lg:h-[600px] relative  snap-center snap-always ">
+            <div
+              key={index || item.id}
+              className="mac:min-w-[308px] min-w-[240px]  lg:min-w-[340px]   mac:h-[542px] sm:h-[420px] lg:h-[600px] relative  snap-center snap-always "
+            >
               <Image
                 className=" relative top-0 rounded-[20px]"
                 src={item.image}
