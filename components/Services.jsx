@@ -112,53 +112,67 @@ function Services() {
   ];
 
   return (
-    <div
-      className="w-full dark:bg-black z-20 lg:h-[70%] relative flex flex-col items-center justify-start"
-      ref={sectionRef}
-    >
-      <div className="w-full h-full pb-10 relative flex flex-col justify-center items-center pt-10 lg:pt-20">
-        <div className="w-full h-[6rem] relative content-center">
-          <div className="w-full left-0 top-[2.1rem] absolute text-teal-300 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
-            Channels
+    <div className="w-full z-20 lg:h-[70%] relative flex flex-col items-center justify-start ">
+      <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
+        <div class="w-full h-[6rem] relative content-center">
+          <div class="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+            Advertising
           </div>
-          <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
+          <div class="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
             services
           </div>
         </div>
       </div>
 
       <div
-        x-data="{}"
-        x-init="$nextTick(() => {
-                        let ul = $refs.cards;
-                        ul.insertAdjacentHTML('afterend', ul.outerHTML);
-                        ul.nextSibling.setAttribute('aria-hidden', 'true');
-                    })"
-        className="w-[100%]  h-[620px] lg:w-[70%] mac:w-[85%] relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_left,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+        ref={sectionRef}
+        className="w-full h-full  relative flex items-start gap-5 overflow-x-scroll no-scrollbar my-12 lg:mt-20  snap-x snap-mandatory mask-gradient "
       >
-        <ul
-          x-ref="cards"
-          className="h-full flex items-center justify-center md:justify-start relative [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll-right"
-        >
-          {cardsinfo.map((item) => (
-            <li
-              key={item.id}
-              className="group/items mac:min-w-[308px] min-w-[240px] lg:min-w-[340px]  relative snap-center snap-always"
-            >
+        <div className="mac:min-w-[308px] min-w-[240px]  lg:min-w-[340px]   mac:h-[542px] sm:h-[420px] lg:h-[600px] ml-[13%] relative  snap-center snap-always ">
+          <Image
+            className=" relative top-0 rounded-[20px]"
+            src={services0}
+            alt=""
+          />
+          <div className=" w-full pl-2 md:pl-6 md:pr-[35px] py-10 top-0 absolute rounded-[20px] flex-col justify-center items-start gap-2.5 inline-flex">
+            <div className="text-zinc-950 text-xs md:text-sm font-normal font-['Inter'] leading-none">
+              name
+            </div>
+            <div className=" text-zinc-950   text-2xl  md:text-2xl font-bold font-['Inter'] ">
+              title
+            </div>
+            <div className="self-stretch h-4 relative">
+              <div className="left-[15px] top-0 absolute text-zinc-950 text-xs md:text-sm font-medium font-['Inter'] leading-none">
+                Explore
+              </div>
+            </div>
+          </div>
+          <Image
+            className="w-[42px] h-[42px] right-4 bottom-4 lg:left-[278px] lg:top-[538px] absolute backdrop-blur-[20px] rounded-full"
+            src={add}
+            alt=""
+            onClick={popup}
+          />
+        </div>
+
+        {cardsinfo.map((item) => {
+          return (
+            <div className="mac:min-w-[308px] min-w-[240px]  lg:min-w-[340px]   mac:h-[542px] sm:h-[420px] lg:h-[600px] relative  snap-center snap-always ">
               <Image
+                className=" relative top-0 rounded-[20px]"
                 src={item.image}
-                alt={item.name}
-                className="relative top-0 rounded-xl h-[598px]"
+                alt=""
               />
-              <div className="w-full pl-2 md:pl-6 md:pr-[35px] py-10 top-0 absolute rounded-[20px] flex-col justify-center items-start gap-2.5 inline-flex">
-                <div className="text-zinc-950 text-xs md:text-sm font-normal font-['Inter']">
+              <div className=" w-full pl-2 md:pl-6 md:pr-[35px] py-10 top-0 absolute rounded-[20px] flex-col justify-center items-start gap-2.5 inline-flex">
+                <div className="text-zinc-950 text-s md:text-sm font-normal font-['Inter'] ">
                   {item.name}
                 </div>
-                <div className="text-zinc-950 text-2xl md:text-2xl font-bold font-['Inter']">
+                <div className=" text-zinc-950  md:text-2xl font-bold font-['Inter']   text-2xl ">
                   {item.title}
                 </div>
                 <div className="self-stretch h-4 relative">
-                  <div className="text-zinc-950 text-xs md:text-sm font-normal font-['Inter'] flex flex-row gap-[2%]">
+                  <div className="  text-zinc-950 text-s md:text-sm font-normal font-['Inter'] flex flex-row gap-[2%] ">
+                    {" "}
                     <Image className="" src={forword} alt="" /> Explore
                   </div>
                 </div>
@@ -169,67 +183,67 @@ function Services() {
                 alt=""
                 onClick={popup}
               />
-            </li>
-          ))}
-        </ul>
+            </div>
+          );
+        })}
       </div>
 
-      <div className="w-[122px] pt-10 pb-10 h-11 relative">
-        <button className="w-[122px] h-11 bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black text-xs md:text-sm font-normal font-['Inter'] leading-none cursor-pointer">
-          <Link href="/services"> Explore all</Link>
+      <div className="w-[122px] h-11 relative">
+        <button className="w-[122px] h-11  bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black text-xs md:text-sm font-normal font-['Inter'] leading-none  cursor-pointer">
+          {" "}
+          <Link href="/services"> View More</Link>{" "}
         </button>
       </div>
 
       <div
-        className="h-screen overflow-y-scroll no-scrollbar fixed top-0 z-[100] fill-transparent flex flex-col items-center w-full p-4 backdrop-blur-lg invisible"
+        className="h-screen overflow-y-scroll no-scrollbar  fixed top-0 z-[100] fill-transparent  flex flex-col items-center w-full p-4 backdrop-blur-lg invisible"
         ref={container}
       >
-        <div className="rounded-md flex flex-col mac:w-[74%] lg:w-[80%] w-[90%] bg-zinc-200 dark:bg-zinc-950 justify-center relative">
-          <div className="md:h-[25rem] p-4 flex md:flex-row flex-col justify-center items-center relative">
-            <div className="md:w-[50%] flex justify-center relative">
-              <Image
-                src={popupimg1}
-                alt=""
-                className="w-full h-full object-contain relative"
-              />
-            </div>
-            <div className="w-[90%] md:w-[50%] justify-center p-4 relative">
-              <div className="text-zinc-950 dark:text-white text-lg font-bold font-['Inter']">
-                React 18
-              </div>
-              <div className="text-zinc-950 dark:text-white text-xs md:text-sm font-normal font-['Inter']">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s.
-              </div>
-            </div>
-          </div>
-          <div className="h-[25rem] p-4 flex md:flex-row flex-col justify-center items-center relative">
-            <div className="md:w-[50%] justify-center relative">
-              <Image
-                src={popupimg2}
-                alt=""
-                className="w-full h-full object-fit relative"
-                layout="responsive"
-              />
-            </div>
-            <div className="w-[90%] md:w-[50%] justify-center p-4 relative">
-              <div className="text-zinc-950 dark:text-white text-lg font-bold font-['Inter']">
-                square 18
-              </div>
-              <div className="text-zinc-950 dark:text-white text-xs md:text-sm font-normal font-['Inter']">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s.
-              </div>
-            </div>
-          </div>
-          <button
-            className="w-[30px] h-[30px] right-2 top-2 absolute justify-center items-center"
+        <div className="rounded-md flex flex-col  mac:w-[74%] lg:w-[74%] w-[94%] backdrop-blur-xl bg-white z-50  lg:p-20 gap-3 mac:p-20 p-8 my-20">
+          <div
+            className="sticky z-52 top-20  flex items-end justify-end cursor-pointer"
             onClick={popup}
           >
-            <RxCross2 className="text-black dark:text-white w-full h-full" />
-          </button>
+            <RxCross2 className="w-8 h-8 relative -top-10 -right-16 sm:-top-16 sm:-right-14" />
+          </div>
+
+          <div className="lg:text-[32px] text-[20px] font-normal font-['Inter'] leading-loose text-left w-full lg:mt-20 mt-5">
+            Lorem ipsum dolor sit amet.
+          </div>
+          <div className="lg:text-[64px] mac:text-[32px] text-[28px] font-normal  font-['Katibeh'] leading-[64px] text-left w-full">
+            Lorem ipsum dolor sit amet.
+          </div>
+          <div className="text-black text-sm font-normal font-['Inter'] leading-normal text-left sm:text-justify ">
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Sapiente maiores totam numquam quam officiis vel
+            doloremque cumque dolores eveniet similique! Lorem ipsum, dolor sit
+            amet consectetur adipisicing elit. Sunt porro quas sapiente
+            necessitatibus aliquid quaerat. Sed eaque laudantium tempore
+            distinctio!
+          </div>
+          <div className=" relative w-full ">
+            <Image src={popupimg1} alt="" className=" min-w-[5rem] " />
+          </div>
+          <div className="text-black text-sm font-normal font-['Inter'] leading-normal text-left sm:text-justify">
+            Lorem ipsum dolor sit amet. lorem20 Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Expedita dolorem ab ut necessitatibus
+            consequatur atque repudiandae voluptas placeat saepe in. Lorem
+            ipsum, dolor sit amet consectetur adipisicing elit. Sunt porro quas
+            sapiente necessitatibus aliquid quaerat. Sed eaque laudantium
+            tempore distinctio!
+          </div>
+          <div className="grid grid-cols-2 grid-rows-1 gap-4 w-full mac:p-8 lg:p-8">
+            <Image src={popupimg2} alt="" className="min-w-[5rem]  " />
+            <Image src={popupimg2} alt="" className="min-w-[5rem]   " />
+          </div>
+          <div className="text-black text-sm font-normal font-['Inter'] leading-normal text-left sm:text-justify">
+            Lorem ipsum dolor sit amet.lorem20 Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Placeat exercitationem quidem tempore.
+            Doloribus ex adipisci non corrupti aliquid consectetur sint. Lorem
+            ipsum, dolor sit amet consectetur adipisicing elit. Sunt porro quas
+            sapiente necessitatibus aliquid quaerat. Sed eaque laudantium
+            tempore distinctio!
+          </div>
         </div>
       </div>
     </div>
