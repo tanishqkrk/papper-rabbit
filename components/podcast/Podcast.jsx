@@ -53,7 +53,7 @@ function Podcast() {
   return (
     <div
       ref={sectionRef}
-      className="w-full h-[70%] relative flex flex-col items-center justify-start mt-10 lg:mt-20 "
+      className="w-full h-[70%] relative flex flex-col items-center justify-start dark:bg-black"
     >
       <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
         <div class="w-full h-[6rem] relative content-center">
@@ -117,11 +117,9 @@ function Podcast() {
             </div>
           </div>
         </div>
-        <PodcastCards podcastimg={podcastimg2} />
-        <PodcastCards podcastimg={podcastimg3} />
-        <PodcastCards podcastimg={podcastimg4} />
-        <PodcastCards podcastimg={podcastimg1} />
-        <PodcastCards podcastimg={podcastimg3} />
+        {podcasts.slice(1).map((img, index) => (
+          <PodcastCards key={index} podcastimg={img} />
+        ))}
       </div>
 
       <div className="w-[122px] h-11 relative mt-20">
