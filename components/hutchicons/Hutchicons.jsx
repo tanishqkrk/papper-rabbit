@@ -45,26 +45,15 @@ function Hutchicons() {
     setCurrentIndex(id);
   };
 
-  const zoomVariants = {
-    hidden: { scale: 5 },
-    visible: { scale: 1 },
-  };
-
   return (
     <div className="w-[100%] h-screen sm:h-[800px] relative flex flex-col items-center justify-center md:justify-start sm:justify-start overflow-hidden pt-20">
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={zoomVariants}
-        transition={{ duration: 2 }} // Adjust duration to slow down the zoom-out effect
-        className="w-[100%] h-full left-0 top-0 absolute"
-      >
+      <div className="w-[100%] h-full left-0 top-0 absolute">
         <Image
           className="w-[100%] h-full object-cover backdrop-blur-sm"
           src={hutchimg}
           alt="banner"
         />
-      </motion.div>
+      </div>
       <div className="w-full h-full left-0 top-0 absolute bg-white dark:bg-black bg-opacity-5 backdrop-blur-xl dark:bg-opacity-5 dark:backdrop-blur-xl" />
 
       {pages[currentIndex]}
