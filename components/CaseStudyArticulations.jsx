@@ -81,35 +81,41 @@ export default function CaseStudySlider() {
               height={200}
               className="central-img"
             />
-            {circles.map((circle, index) => (
-              <div
-                key={index}
-                className="circle"
-                style={{
-                  width: circle.size,
-                  height: circle.size,
-                  animation: circle.animation,
-                  boxShadow: `0 12px 16px 0 ${circle.color}, 0 17px 50px 0 ${circle.color}`,
-                  zIndex: index,
-                }}
-              >
-                {circle.type === "text" ? (
-                  <span
-                    className="circle-text font-[katibeh]"
-                    style={{ fontSize: "20px", fontWeight: 400 }}
-                  >
-                    {circle.text}
-                  </span>
-                ) : (
-                  <Image
-                    src={circle.svg}
-                    alt={`Icon for ${circle.text}`}
-                    width={circle.size * 0.8}
-                    height={circle.size * 0.8}
-                  />
-                )}
-              </div>
-            ))}
+            {circles.map((circle, index) => {
+              const shadowColor =
+                index % 2 === 0
+                  ? "rgba(255, 255, 0, 0.3)"
+                  : "rgba(0, 0, 255, 0.3)";
+              return (
+                <div
+                  key={index}
+                  className="circle"
+                  style={{
+                    width: circle.size,
+                    height: circle.size,
+                    animation: circle.animation,
+                    boxShadow: `0 8px 10px 0 ${shadowColor}, 0 10px 20px 0 ${shadowColor}`,
+                    zIndex: index,
+                  }}
+                >
+                  {circle.type === "text" ? (
+                    <span
+                      className="circle-text font-[katibeh]"
+                      style={{ fontSize: "20px", fontWeight: 400 }}
+                    >
+                      {circle.text}
+                    </span>
+                  ) : (
+                    <Image
+                      src={circle.svg}
+                      alt={`Icon for ${circle.text}`}
+                      width={circle.size * 0.8}
+                      height={circle.size * 0.8}
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
