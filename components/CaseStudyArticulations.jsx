@@ -1,80 +1,118 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "./styles.css";
-import { EffectFade, Navigation, Pagination } from "swiper/modules";
+import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-
-// Importing images
-import casestudyy from "../public/assets/casestudyimg/casestudyy.png";
-import img from "../public/assets/casestudyimg/img.png";
-import img2 from "../public/assets/casestudyimg/img2.png";
-
-import arrowleft from "../public/assets/bannerimgs/leftsvg.svg";
-import arrowright from "../public/assets/bannerimgs/rightsvg.svg";
+import "./styles.css";
+import centralImage from "../public/assets/bannerimgs/kelly-sikkema-v9FQR4tbIq8-unsplash 3.png";
+import svgIcon from "../public/assets/bannerimgs/global.png"; // Add your SVG imports
+import edit2 from "../public/assets/bannerimgs/edit-2.png"; // Add your SVG imports
+import clock from "../public/assets/bannerimgs/clock.png"; // Add your SVG imports
 
 export default function CaseStudySlider() {
-  const [mounted, setMounted] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => setMounted(true), []);
-
-  const images = [casestudyy, casestudyy]; // Adjust the images as per your requirement
-
-  if (!mounted) {
-    return null; // Avoid rendering during SSR
-  }
+  const circles = [
+    {
+      size: 29,
+      animation: "orbit1-clockwise 10s linear infinite",
+      color: "rgba(255, 0, 0, 0.8)",
+      type: "text",
+      text: "Service 1",
+    },
+    {
+      size: 169,
+      animation: "orbit2-anticlockwise 15s linear infinite",
+      color: "rgba(255, 255, 0, 0.8)",
+      type: "text",
+      text: "Service 2",
+    },
+    {
+      size: 79,
+      animation: "orbit3-clockwise 20s linear infinite",
+      color: "rgba(255, 192, 203, 0.8)",
+      type: "svg",
+      svg: clock,
+    },
+    {
+      size: 169,
+      animation: "orbit4-anticlockwise 25s linear infinite",
+      color: "rgba(255, 0, 255, 0.8)",
+      type: "text",
+      text: "Hospitality",
+    },
+    {
+      size: 70,
+      animation: "orbit5-clockwise 30s linear infinite",
+      color: "rgba(255, 255, 0, 0.8)",
+      type: "svg",
+      svg: svgIcon,
+    },
+    {
+      size: 90,
+      animation: "orbit6-anticlockwise 35s linear infinite",
+      color: "rgba(255, 0, 0, 0.8)",
+      type: "svg",
+      svg: edit2,
+    },
+    {
+      size: 169,
+      animation: "orbit7-clockwise 40s linear infinite",
+      color: "rgba(255, 192, 203, 0.8)",
+      type: "text",
+      text: "Java Rain",
+    },
+  ];
 
   return (
     <div className="pt-10 dark:bg-black">
-      <Swiper
-        spaceBetween={30}
-        effect={"fade"}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        loop={true}
-        pagination={{ clickable: true }}
-        modules={[EffectFade, Navigation, Pagination]}
-        className="mySwiper"
-        onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
-      >
-        {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <div className="image-container">
-              <div className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
-                <div className="w-full h-[6rem] relative content-center">
-                  <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
-                    Articulations
-                  </div>
-                  <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
-                    Case Study
-                  </div>
-                </div>
-              </div>
-              <Image
-                src={image.src}
-                alt={`Slide ${index + 1}`}
-                width={500} // Adjust width and height to desired values
-                height={600} // Adjust width and height to desired values
-                objectFit="contain"
-              />
+      <div className="image-container">
+        <div className="w-full h-full relative flex flex-col justify-between items-center gap-8 pt-10 lg:pt-20">
+          <div className="w-full h-[2rem] relative content-center">
+            <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+              Articulations
             </div>
-          </SwiperSlide>
-        ))}
-        <div className="swiper-button-prev">
-          <Image src={arrowleft} alt="Previous" width={80} height={80} />
+            <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
+              Case Study
+            </div>
+          </div>
+          <div className="rotating-img-container relative flex items-center mt-20 justify-center">
+            <Image
+              src={centralImage}
+              alt="Central Image"
+              width={200}
+              height={200}
+              className="central-img"
+            />
+            {circles.map((circle, index) => (
+              <div
+                key={index}
+                className="circle"
+                style={{
+                  width: circle.size,
+                  height: circle.size,
+                  animation: circle.animation,
+                  boxShadow: `0 12px 16px 0 ${circle.color}, 0 17px 50px 0 ${circle.color}`,
+                  zIndex: index,
+                }}
+              >
+                {circle.type === "text" ? (
+                  <span
+                    className="circle-text font-[katibeh]"
+                    style={{ fontSize: "20px", fontWeight: 400 }}
+                  >
+                    {circle.text}
+                  </span>
+                ) : (
+                  <Image
+                    src={circle.svg}
+                    alt={`Icon for ${circle.text}`}
+                    width={circle.size * 0.8}
+                    height={circle.size * 0.8}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="swiper-button-next">
-          <Image src={arrowright} alt="Next" width={50} height={50} />
-        </div>
-      </Swiper>
+      </div>
     </div>
   );
 }

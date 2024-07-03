@@ -53,7 +53,7 @@ body {
 }
 .swiper-button-prev,
 .swiper-button-next {
-  color: transparent; /* Adjust color as needed */
+  color: transparent !important; /* Adjust color as needed */
 }
 
 .swiper-button-prev {
@@ -125,4 +125,96 @@ body {
 
 .animate-infinite-scroll-right {
   animation: infinite-scroll-right 20s linear infinite;
+}
+.image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px; /* Adjust the width as needed */
+  margin: auto;
+}
+
+.central-img {
+  z-index: 10;
+}
+
+.rotating-img-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes orbit1-clockwise {
+  0% {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit2-anticlockwise {
+  0% {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(100px) rotate(360deg);
+  }
+}
+
+@keyframes orbit3-clockwise {
+  0% {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit4-anticlockwise {
+  0% {
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(200px) rotate(360deg);
+  }
+}
+
+@keyframes orbit5-clockwise {
+  0% {
+    transform: rotate(0deg) translateX(250px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit6-anticlockwise {
+  0% {
+    transform: rotate(0deg) translateX(140px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(140px) rotate(360deg);
+  }
+}
+
+@keyframes orbit7-clockwise {
+  0% {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
 }

@@ -6,7 +6,7 @@ function GlobalTraction() {
   const [projects, startups, countries, years] = data.counts;
 
   return (
-    <div className="w-full dark:bg-black bg-white lg:mx-auto flex flex-col justify-between items-center relative pt-10">
+    <div className="w-full dark:bg-black bg-white lg:mx-auto flex flex-col justify-between items-center relative mt-8 pt-10">
       <div className="w-full h-full relative flex flex-col justify-center items-center">
         <div className="w-full h-[6rem] relative content-center">
           <div className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
