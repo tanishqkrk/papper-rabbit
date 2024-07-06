@@ -28,7 +28,7 @@ function AboutUsPage() {
   }
 
   return (
-    <div className="dark:bg-black flex flex-col items-center justtify-center">
+    <div className="dark:bg-black bg-gray-100 flex flex-col items-center justtify-center">
       <BackBar name={"About_us"} />
       <div className="w-full h-[350px] ">
         <Image
@@ -219,37 +219,22 @@ function AboutUsPage() {
         </div>
       </div>
 
-      <div className=" w-full flex flex-col items-center justify-center">
-        <div>Why Choose Paper Rabbit?</div>
-        <div className="w-[74%] h-full flex items-center justify-center  gap-4">
-          <div className=" w-[450px] h-[300px]   ">
+      <div className=" w-full flex h-[500px] mt-5 flex-col items-center gap-4 justify-between">
+        <div className=" relative text-black font-bold text-2xl font-['Inter'] ">
+          Why Choose Paper Rabbit?
+        </div>
+        <div className="w-[74%]  h-full flex items-center justify-center  gap-4">
+          <div className=" w-[450px] h-[300px] flex flex-col justify-center bg-white p-4  rounded-xl">
             {/* // <Image className=" relative top-0 rounded-[20px]" src={services0} alt='' /> */}
-            <div className=" w-full  flex-col justify-center items-start gap-2.5 inline-flex">
-              <div className="text-zinc-950 text-xs md:text-sm font-normal font-['Inter'] leading-none">
-                Lorem ipsum dolor sit amet.
-              </div>
+            <div className=" w-full h-full  flex-col justify-center items-start gap-2.5 inline-flex">
               <div className=" text-zinc-950 text-base md:text-2xl font-bold font-['Inter'] leading-normal">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
                 nisi!
               </div>
-            </div>
-            <Image
-              className="w-[42px] h-[42px] right-4 bottom-4  backdrop-blur-[20px] rounded-full"
-              src={add}
-              alt=""
-              onClick={popup}
-            />
-          </div>
-
-          <div className=" w-[450px] h-[300px]   ">
-            {/* // <Image className=" relative top-0 rounded-[20px]" src={services0} alt='' /> */}
-            <div className=" w-full  flex-col justify-center items-start gap-2.5 inline-flex">
-              <div className="text-zinc-950 text-xs md:text-sm font-normal font-['Inter'] leading-none">
-                Lorem ipsum dolor sit amet.
-              </div>
-              <div className=" text-zinc-950 text-base md:text-2xl font-bold font-['Inter'] leading-normal">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto,
-                dolorum?
+              <div className="text-zinc-950 text-sm md:text-sm font-normal font-['Inter'] leading-none">
+                Fugiat officia nulla tempor proident exercitation pariatur in
+                adipisicing pariatur Lorem magna et veniam eu. Nulla minim
+                incididunt veniam culpa tempor nisi consectetur voluptate.
               </div>
             </div>
             <Image
@@ -260,15 +245,17 @@ function AboutUsPage() {
             />
           </div>
 
-          <div className=" w-[450px] h-[300px]   ">
+          <div className=" w-[450px] h-[300px] flex flex-col justify-center bg-white p-4  rounded-xl">
             {/* // <Image className=" relative top-0 rounded-[20px]" src={services0} alt='' /> */}
-            <div className=" w-full  flex-col justify-center items-start gap-2.5 inline-flex">
-              <div className="text-zinc-950 text-xs md:text-sm font-normal font-['Inter'] leading-none">
-                Lorem ipsum dolor sit amet.
-              </div>
+            <div className=" w-full h-full  flex-col justify-center items-start gap-2.5 inline-flex">
               <div className=" text-zinc-950 text-base md:text-2xl font-bold font-['Inter'] leading-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-                optio!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                nisi!
+              </div>
+              <div className="text-zinc-950 text-sm md:text-sm font-normal font-['Inter'] leading-none">
+                Fugiat officia nulla tempor proident exercitation pariatur in
+                adipisicing pariatur Lorem magna et veniam eu. Nulla minim
+                incididunt veniam culpa tempor nisi consectetur voluptate.
               </div>
             </div>
             <Image
@@ -279,15 +266,38 @@ function AboutUsPage() {
             />
           </div>
 
-          <div className=" w-[450px] h-[300px]   ">
+          <div className=" w-[450px] h-[300px] flex flex-col justify-center bg-white p-4  rounded-xl">
             {/* // <Image className=" relative top-0 rounded-[20px]" src={services0} alt='' /> */}
-            <div className=" w-full  flex-col justify-center items-start gap-2.5 inline-flex">
-              <div className="text-zinc-950 text-xs md:text-sm font-normal font-['Inter'] leading-none">
-                Lorem ipsum dolor sit amet.
-              </div>
+            <div className=" w-full h-full  flex-col justify-center items-start gap-2.5 inline-flex">
               <div className=" text-zinc-950 text-base md:text-2xl font-bold font-['Inter'] leading-normal">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Excepturi, provident.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                nisi!
+              </div>
+              <div className="text-zinc-950 text-sm md:text-sm font-normal font-['Inter'] leading-none">
+                Fugiat officia nulla tempor proident exercitation pariatur in
+                adipisicing pariatur Lorem magna et veniam eu. Nulla minim
+                incididunt veniam culpa tempor nisi consectetur voluptate.
+              </div>
+            </div>
+            <Image
+              className="w-[42px] h-[42px] right-4 bottom-4  backdrop-blur-[20px] rounded-full"
+              src={add}
+              alt=""
+              onClick={popup}
+            />
+          </div>
+
+          <div className=" w-[450px] h-[300px] flex flex-col justify-center bg-white p-4  rounded-xl">
+            {/* // <Image className=" relative top-0 rounded-[20px]" src={services0} alt='' /> */}
+            <div className=" w-full h-full  flex-col justify-center items-start gap-2.5 inline-flex">
+              <div className=" text-zinc-950 text-base md:text-2xl font-bold font-['Inter'] leading-normal">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                nisi!
+              </div>
+              <div className="text-zinc-950 text-sm md:text-sm font-normal font-['Inter'] leading-none">
+                Fugiat officia nulla tempor proident exercitation pariatur in
+                adipisicing pariatur Lorem magna et veniam eu. Nulla minim
+                incididunt veniam culpa tempor nisi consectetur voluptate.
               </div>
             </div>
             <Image
