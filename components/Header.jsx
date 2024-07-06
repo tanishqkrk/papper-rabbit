@@ -145,7 +145,7 @@ function Header(props) {
             }`}
             onClick={disappear}
           >
-            <Link href="/carrer">
+            <Link href="/career">
               <div className=" text-zinc-950 dark:text-white text-sm mac:text-xs font-normal font-['Inter'] leading-normal ">
                 Carrer
               </div>
