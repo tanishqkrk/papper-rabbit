@@ -46,7 +46,7 @@ function Hutchicons() {
   };
 
   return (
-    <div className="w-[100%] h-screen sm:h-[800px] relative flex flex-col items-center justify-center md:justify-start sm:justify-start overflow-hidden pt-20">
+    <div className="w-[100%] h-screen sm:h-[800px] relative flex flex-col items-center justify-center md:justify-center sm:justify-start overflow-hidden pt-20">
       <div className="w-[100%] h-full left-0 top-0 absolute">
         <Image
           className="w-[100%] h-full object-cover backdrop-blur-sm"
@@ -97,7 +97,7 @@ function Hutchicons() {
         )}
       </div>
 
-      <div className="lg:w-14 lg:h-[180px] mac:w-10 mac:h-[120px] w-[180px] h-14 lg:left-[10%] lg:top-[45%] mac:left-[10%] mac:top-[40%] bottom-[4%] left-[40%] absolute bg-gray-300 rounded-[2rem] flex lg:flex-col mac:flex-col items-center justify-center gap-2">
+      <div className="lg:w-14 lg:h-[180px] md:mb-5 mac:w-10 mac:h-[120px] w-[180px] h-14 sm:left-[25%] lg:left-[10%] lg:top-[45%] mac:left-[10%] mac:top-[40%] bottom-[4%] left-[40%] absolute bg-gray-300 rounded-[2rem] flex lg:flex-col mac:flex-col items-center justify-center gap-2">
         {currentIndex === 0 ? (
           <Image
             onClick={() => changetab(0)}

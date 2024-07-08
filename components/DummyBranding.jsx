@@ -48,7 +48,7 @@ const DummyBranding = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full z-20 relative flex flex-col items-center justify-start gap-12 bg-white dark:bg-black h-screen mac:h-[880px] sm:h-full md:h-full"
+      className="w-full sm:mb-3 md:mb-3 z-20 relative flex flex-col items-center justify-start gap-12 bg-white dark:bg-black h-screen mac:h-[880px] sm:h-full md:h-full"
     >
       <motion.div
         className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20"
@@ -67,7 +67,7 @@ const DummyBranding = () => {
       </motion.div>
 
       <motion.div
-        className="lg:grid lg:grid-cols-2 relative lg:grid-rows-1 sam-[58%] lg:max-w-[58%] mac:w-[75%] mac:grid mac:grid-cols-2 lg:mt-[5rem] mac:grid-rows-1 ram-[75%] flex flex-col items-center justify-center lg:mb-20 lg:gap-20 mac:gap-20"
+        className="lg:grid sm:p-3 md:p-3 lg:grid-cols-2 relative lg:grid-rows-1 sam-[58%] lg:max-w-[58%] mac:w-[75%] mac:grid mac:grid-cols-2 lg:mt-[5rem] mac:grid-rows-1 ram-[75%] flex flex-col items-center justify-center lg:mb-20 lg:gap-20 mac:gap-20"
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.5, duration: 0.5 }}
