@@ -34,8 +34,8 @@ import dark7 from '../public/assets/bannerimgs/7 background-dark.png';
 import dark8 from '../public/assets/bannerimgs/8 background-dark.png';
 import dark9 from '../public/assets/bannerimgs/9 background-dark.png';
 
-import arrowleft from "../public/assets/bannerimgs/leftsvg.svg";
-import arrowright from "../public/assets/bannerimgs/rightsvg.svg";
+import arrowleft from "../public/assets/bannerimgs/leftone.png";
+import arrowright from "../public/assets/bannerimgs/rightone.png";
 
 export default function ImageSlider() {
   const { resolvedTheme } = useTheme();
@@ -121,7 +121,7 @@ export default function ImageSlider() {
         </SwiperSlide>
       ))}
       <div className="swiper-button-prev">
-        <Image src={arrowleft} alt="Previous" width={80} height={80} />
+        <Image src={arrowleft} alt="Previous" width={150} height={150} />
       </div>
       <div className="swiper-button-next">
         <Image src={arrowright} alt="Next" width={50} height={50} />
