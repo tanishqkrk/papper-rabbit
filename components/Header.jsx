@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { FiSun, FiMoon } from "react-icons/fi";
+import { Menu, X } from "lucide-react";
 import dayimg from "../public/assets/headerimg/Group 2.svg";
 import darkimg from "../public/assets/headerimg/night.svg";
 import darkpr from "../public/assets/headerimg/PR2.svg";
@@ -25,6 +26,7 @@ function Header(props) {
   const [mounted, setMounted] = useState(false);
   const [hide, setHide] = useState(false);
   const [popupVisible, setPopupVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -40,26 +42,24 @@ function Header(props) {
   };
 
   return (
-    <div className="fixed top-0 w-[100%] h-11  dark:bg-black  z-50 flex justify-center items-center  bg-opacity-90  dark:bg-opacity-50 dark:backdrop-blur-sm bg-gray-50">
-      <div className="lg:w-[90%] mac:w-[80%] w-full z-40  h-11 relative flex items-center justify-between sm:p-2 md:p-2">
-        {/* <div className="h-full text-zinc-950 dark:text-white relative lg:text-[2rem] text-[1.5rem] font-normal font-['Revelstoke'] "> */}
+    <div className="fixed top-0 w-full h-11 dark:bg-black z-50 flex justify-center items-center bg-opacity-90 dark:bg-opacity-50 dark:backdrop-blur-sm bg-gray-50">
+      <div className="lg:w-[90%] mac:w-[80%] w-full z-40 h-11 relative flex items-center justify-between sm:p-2 md:p-2">
         <Link href="/">
           <div className="h-11 text-zinc-950 dark:text-white relative lg:text-[1.2rem] md:text-[1.2rem] sm:text-[1.2rem] text-[1.2rem] font-normal font-['Revelstoke'] flex justify-center items-center object-contain">
             PAPER RABBIT
           </div>
         </Link>
-        {/* </div> */}
-        <div className="h-full w-[68%]  relative lg:grid mac:grid grid-cols-10 grid-rows-1 hidden  ">
+        <div className="hidden md:flex h-full w-[68%] relative lg:grid mac:grid grid-cols-10 grid-rows-1">
           <div
             className={`${
               hide
-                ? " flex-col  h-full text-center cursor-pointer  flex items-center justify-center"
-                : " flex-col  h-full text-center cursor-pointer  flex items-center justify-center group/item"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center group/item"
             }`}
             onClick={disappear}
           >
             <Link href="/">
-              <div className=" text-zinc-950 dark:text-white  text-sm mac:text-xs font-normal font-['Inter'] leading-normal ">
+              <div className=" text-zinc-950 dark:text-white text-sm mac:text-xs font-normal font-['Inter'] leading-normal ">
                 Home
               </div>
             </Link>
@@ -67,8 +67,8 @@ function Header(props) {
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
@@ -82,8 +82,8 @@ function Header(props) {
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
@@ -97,8 +97,8 @@ function Header(props) {
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
@@ -112,8 +112,8 @@ function Header(props) {
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
@@ -127,8 +127,8 @@ function Header(props) {
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
@@ -136,12 +136,11 @@ function Header(props) {
               <Link href="/aboutus">About Us</Link>
             </div>
           </div>
-          {/* <AboutUs /> */}
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
@@ -151,12 +150,11 @@ function Header(props) {
               </div>
             </Link>
           </div>
-          {/* <AboutUs /> */}
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
@@ -166,36 +164,31 @@ function Header(props) {
               </div>
             </Link>
           </div>
-          {/* <AboutUs /> */}
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
             <div className=" text-zinc-950 dark:text-white text-sm mac:text-xs font-normal font-['Inter'] leading-normal ">
               World
             </div>
-            {/* <World /> */}
           </div>
           <div
             className={`${
               hide
-                ? " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
-                : " flex-col   h-full text-center cursor-pointer  flex items-center justify-center nav-buttons"
+                ? " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
+                : " flex-col h-full text-center cursor-pointer flex items-center justify-center nav-buttons"
             }`}
             onClick={disappear}
           >
             <div className=" text-zinc-950 dark:text-white text-sm mac:text-xs font-normal font-['Inter'] leading-normal ">
               <Link href="/contactus">Contact Us</Link>
             </div>
-            {/* <Contactus /> */}
           </div>
         </div>
-        {/* <div className="h-full relative sm:hidden md:hidden ">
-        </div> */}
         <div className="relative flex items-center justify-center gap-[4rem]">
           {mounted ? (
             theme === "dark" ? (
@@ -207,27 +200,118 @@ function Header(props) {
             <div className="w-6 h-6 bg-gray-400 rounded-full" />
           )}
           <Image
-            className="w-7 h-7"
+            className="sm:hidden md:block  lg:block xl:bloc w-7 h-7"
             src={theme === "light" ? search : Dark}
             alt="Search"
           />
           <Image
-            className="block-bg w-9 h-9"
+            className=" sm:hidden md:block  lg:block xl:block block-bg w-9 h-9"
             src={theme === "light" ? darkpr : lightpr}
             alt="Popup"
             onClick={popup}
           />
+          <div className="hidden sm:block flex items-center">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-black dark:text-white"
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
-      {/* </div> */}
-      <div
-        className="w-full h-screen absolute z-[100] top-0  flex items-center justify-center invisible"
-        ref={container}
-      >
-        <div className="w-full h-screen absolute  bg-white opacity-70" />
-        <PopupMenu />
-      </div>
+      {menuOpen && (
+        <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-50 dark:bg-black w-full h-full z-50">
+          <button
+            className="absolute top-5 right-5 text-black dark:text-white"
+            onClick={() => setMenuOpen(false)}
+          >
+            <X size={24} />
+          </button>
+          <Link href="/">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              Home
+            </div>
+          </Link>
+          <Link href="/hutch">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              Hutch
+            </div>
+          </Link>
+          <Link href="/services">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              Services
+            </div>
+          </Link>
+          <Link href="/portfolio">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              Portfolio
+            </div>
+          </Link>
+          <Link href="/lounge">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              Lounge
+            </div>
+          </Link>
+          <Link href="/aboutus">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              About Us
+            </div>
+          </Link>
+          <Link href="/career">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              Career
+            </div>
+          </Link>
+          <Link href="/store">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              Store
+            </div>
+          </Link>
+          <Link href="/world">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              World
+            </div>
+          </Link>
+          <Link href="/contactus">
+            <div
+              className="text-black dark:text-white py-2 text-2xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact Us
+            </div>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
+
 export default Header;
