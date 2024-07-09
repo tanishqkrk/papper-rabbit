@@ -68,15 +68,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 30px; /* Adjust for smaller screens */
-    left: 5px; /* Adjust margin from left edge */
-    right: 5px; /* Adjust margin from right edge */
-  }
-}
-
-@media (max-width: 768px) {
   .image-container {
     width: 300px; /* Adjust for smaller screens */
   }
@@ -85,6 +76,22 @@ body {
 @media (max-width: 480px) {
   .image-container {
     width: 200px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-button-prev {
+    color: transparent !important; /* Adjust color as needed */
+    left: 20px !important; /* Adjust margin from left edge */
+    z-index: 10; /* Ensure it's above the swiper content */
+    width: 50px !important; /* Adjust width as needed */
+    height: 50px; /* Adjust width as needed */
+  }
+  .swiper-button-next {
+    color: transparent !important; /* Adjust color as needed */
+    right: 10px; /* Adjust margin from right edge */
+    z-index: 10; /* Ensure it's above the swiper content */
+    width: 50px !important; /* Adjust width as needed */
   }
 }
 
