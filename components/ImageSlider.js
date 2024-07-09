@@ -7,7 +7,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './styles.css';
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import Spinner from 'react-spinkit';
 
@@ -73,7 +73,8 @@ export default function ImageSlider() {
       }}
       loop={true}
       pagination={{ clickable: true }}
-      modules={[EffectFade, Navigation, Pagination]}
+      modules={[EffectFade, Navigation, Pagination, Autoplay]}
+      autoplay={{ delay: 4000 }} // Autoplay with a 4-second delay
       className="mySwiper"
       onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
     >

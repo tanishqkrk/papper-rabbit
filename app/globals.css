@@ -440,8 +440,12 @@ body {
   transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
-.button1:hover {
-  box-shadow: 0 12px 16px 0 rgba(255, 192, 203, 0.24),
-    0 17px 50px 0 rgba(255, 192, 203, 0.8);
-  transition: box-shadow 0.3s ease, border 0.3s ease;
+/* Tailwind CSS responsive hover styles */
+@media (hover: hover) {
+  .button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(255, 192, 203, 0.24),
+      0 17px 50px 0 rgba(255, 192, 203, 0.8);
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid pink; /* Ensure border style stays intact */
+  }
 }
