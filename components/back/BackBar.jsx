@@ -1,6 +1,7 @@
 import React from "react";
 import backarrow from "../../public/assets/headerimg/Vector.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function BackBar(props) {
   const name = props.name;
@@ -15,12 +16,12 @@ function BackBar(props) {
             <div>
               <Image className="w-2 h-2" src={backarrow} alt="" />
             </div>
-            <div
-              to="/"
+            <Link
+              href="/"
               className="text-black text-xs font-normal font-['Inter'] leading-none"
             >
               Home
-            </div>
+            </Link>
           </div>
         </div>
         <div className="flex justify-center items-center  font-bold font-['Inter'] leading-[15px]">

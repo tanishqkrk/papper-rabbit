@@ -51,6 +51,7 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw !important;
+  @apply dark:bg-black !important;
 }
 
 @layer utilities {

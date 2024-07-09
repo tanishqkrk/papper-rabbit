@@ -23,7 +23,7 @@ const DummyBranding = () => {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.5, // Adjust as needed
+        threshold: 0.3, // Adjust as needed
       }
     );
 
