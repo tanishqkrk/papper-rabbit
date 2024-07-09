@@ -34,12 +34,21 @@ function Workwithus() {
           </div>
         </div>
         <div className="relative flex flex-col items-center justify-center gap-4">
-          <Link href="/contactus">
-            <button className="button1 relative inline-flex lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] md:w-[150px] md:h-[40px] sm:w-[5rem] h-12 overflow-hidden rounded-[10px] p-[3px] focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-pink-50">
+          <Link href="/contactus" className="sm:hidden">
+            <button className="sm:hidden  button1 relative inline-flex lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] md:w-[150px] md:h-[40px] sm:w-[100px] sm:h-[35px] h-12 overflow-hidden rounded-[10px] p-[3px] focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-pink-50">
               <span className="absolute inset-[-200%] animate-[spin_1s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFC0CB_0%,#FF69B4_50%,#FFC0CB_100%)]" />
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-[8px] bg-zinc-950 dark:bg-white text-white dark:text-black text-xs lg:text-sm font-bold font-['Inter'] leading-[30px] backdrop-blur-3xl">
                 Reach Us
               </span>
+            </button>
+          </Link>
+
+          <Link href="/contactus" className="sm:block hidden ">
+            <button
+              style={{ border: "2px solid pink" }}
+              className="sm:block hidden  button1 relative inline-flex lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] md:w-[150px] md:h-[40px] sm:w-[100px] sm:h-[35px] h-12 overflow-hidden rounded-[10px] p-[3px] focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-pink-50 bg-zinc-950 dark:bg-white text-white dark:text-black text-xs lg:text-sm font-bold font-['Inter'] leading-[30px] backdrop-blur-3xl"
+            >
+              Reach Us
             </button>
           </Link>
         </div>
