@@ -69,7 +69,7 @@ export default function CaseStudySlider() {
   ];
 
   return (
-    <div className="pt-10 dark:bg-black">
+    <div className="pt-10 ">
       <div className="image-container">
         <div className="w-full h-full relative flex flex-col justify-between items-center gap-8 pt-10 lg:pt-20">
           <div className="w-full h-[2rem] relative content-center">
@@ -103,6 +103,7 @@ export default function CaseStudySlider() {
                     animation: circle.animation,
                     boxShadow: `0 8px 10px 0 ${shadowColor}, 0 10px 20px 0 ${shadowColor}`,
                     zIndex: index,
+                    backgroundColor: "white",
                   }}
                 >
                   {circle.type === "text" ? (
