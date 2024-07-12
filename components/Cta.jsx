@@ -3,6 +3,7 @@ import ctaimg from "../public/assets/workwithus/workwithus.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import "./styles.css";
+import "./Cta.css";
 
 function Cta() {
   return (
@@ -13,7 +14,7 @@ function Cta() {
           src={ctaimg}
           alt="cta image"
         />
-        <div className="lg:h-80 w-full flex flex-row  justify-between h-72 left-0 top-0 absolute bg-black bg-opacity-5 rounded-[20px] backdrop-blur-[10px]" />
+        <div className="lg:h-80 w-full flex flex-row justify-between h-72 left-0 top-0 absolute bg-black bg-opacity-5 rounded-[20px] backdrop-blur-[5px] sm:backdrop-blur-[10px] md:backdrop-blur-[15px]" />
 
         <div className="lg:w-full lg:h-full sm:px-2 md:px-2 lg:pl-[40px] mac:w-full mac:h-full mac:pl-[60px] flex flex-col justify-center gap-3 my-5 sm:my-2 lg:text-left text-2xl relative text-white dark:text-black lg:text-[40px] font-bold font-['Inter'] leading-none lg:leading-[48px]">
           <div className="w-full flex items-start sm:justify-start gap-4 text-custom-color">
