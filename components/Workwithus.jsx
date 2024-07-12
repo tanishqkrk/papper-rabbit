@@ -2,6 +2,7 @@ import React from "react";
 import workwithusimg2 from "../public/assets/workwithus/workwithus2.png";
 import Image from "next/image";
 import Link from "next/link";
+import "./Cta.css";
 
 function Workwithus() {
   return (
@@ -12,7 +13,7 @@ function Workwithus() {
           src={workwithusimg2}
           alt="cta image"
         />
-        <div className="lg:h-80 w-full h-72 left-0 top-0 absolute bg-black bg-opacity-5 rounded-[20px] backdrop-blur-[10px]" />
+        <div className="lg:h-80 w-full h-72 left-0 top-0 absolute bg-black bg-opacity-5 rounded-[20px] backdrop-blur" />
 
         <div className="sm:p-4 md:p-4 lg:w-full lg:h-full lg:pl-[40px] mac:w-full mac:h-full mac:pl-[60px] flex flex-col justify-center lg:text-left text-2xl relative text-white dark:text-black lg:text-[40px] font-bold font-['Inter'] leading-none lg:leading-[48px]">
           <p
