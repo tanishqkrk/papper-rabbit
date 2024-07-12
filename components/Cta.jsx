@@ -51,7 +51,7 @@ function Cta() {
           </Link>
 
           <Link href="/contactus" className="sm:block hidden">
-            <button className="sm:block hidden button1 relative inline-flex lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] md:w-[150px] md:h-[40px] sm:w-[100px] sm:h-[35px] h-12 overflow-hidden rounded-[10px] p-[3px] focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-pink-50 bg-zinc-950 dark:bg-white text-white dark:text-black text-xs lg:text-sm font-bold font-['Inter'] leading-[30px] backdrop-blur-3xl animate-border-glow">
+            <button className="sm:block hidden button1 relative inline-flex lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] md:w-[150px] md:h-[40px] sm:w-[100px] sm:h-[35px] h-12 overflow-hidden rounded-[5px] p-[3px] focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-pink-50 bg-zinc-950 dark:bg-white text-white dark:text-black text-xs lg:text-sm font-bold font-['Inter'] leading-[30px] backdrop-blur-3xl animate-border-glow">
               Reach Us
             </button>
           </Link>

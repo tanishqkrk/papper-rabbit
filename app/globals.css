@@ -470,7 +470,6 @@ body {
       var(--c2) 0.25turn
     )
     1;
-  border-radius: 10px;
   animation: borderRotate var(--d) linear infinite forwards;
 }
 
