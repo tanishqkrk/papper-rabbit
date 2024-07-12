@@ -35,11 +35,21 @@
   scrollbar-color: rgb(var(--foreground-rgb)) rgb(var(--background-start-rgb)); /* Thumb and track colors */
 }
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --angle: 120deg;
+    --c1: rgba(255, 105, 180, 1); /* Hot Pink */
+    --c2: rgba(255, 105, 180, 0.1); /* Lighter Hot Pink */
+    --d: 2500ms;
   }
 }
 
@@ -447,5 +457,25 @@ body {
       0 17px 50px 0 rgba(255, 192, 203, 0.8);
     transition: box-shadow 0.3s ease, border 0.3s ease;
     border: 2px solid pink; /* Ensure border style stays intact */
+  }
+}
+
+.animate-border-glow {
+  border: 2px solid transparent;
+  border-image: conic-gradient(
+      from var(--angle),
+      var(--c2),
+      var(--c1) 0.1turn,
+      var(--c1) 0.15turn,
+      var(--c2) 0.25turn
+    )
+    1;
+  border-radius: 10px;
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 480deg; /* 120 degrees more for smoother overlap */
   }
 }
