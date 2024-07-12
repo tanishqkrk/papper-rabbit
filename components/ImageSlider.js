@@ -96,7 +96,7 @@ export default function ImageSlider() {
             />
             {index % 2 === 0 ? (
               <div className="absolute z-20 flex flex-col items-end justify-start w-[450px] sm:w-[90%] lg:w-[646px] mac:w-[546px] sm:bottom-[2rem] sm:left-[2rem]  md:bottom-[2rem] md:right-[2rem]  lg:right-[15rem] lg:bottom-[10rem] mac:right-52 mac:bottom-[6rem]">
-                <div className="absolute w-full h-full bg-white dark:bg-black bg-opacity-5 dark:bg-opacity-5 rounded-[20px] backdrop-blur-2xl" />
+                <div className="absolute w-full h-full backdrop-blur-mobile" />
                 <div className="relative mt-[15px] mr-[22px] text-[40px] sm:text-[40px] lg:text-[64px] font-['Katibeh'] text-black dark:text-white">What Makes You</div>
                 <div className="relative mt-[6px] mr-[22px] text-5xl sm:text-[45px] lg:text-8xl mac:text-7xl font-['Revelstoke'] text-black dark:text-white">{title[currentIndex % title.length]}!</div>
                 <div className="relative mt-[10px] ml-[20px] mr-[22px] text-[14px] sm:text-[14px] lg:text-[15px] font-['Inter'] text-black dark:text-white">We are brand enthusiasts. We are storytellers. We are a full-service creative agency combining strategic thinking and sharp design to build great brands in this cutthroat business competition.</div>
@@ -107,7 +107,7 @@ export default function ImageSlider() {
               </div>
             ) : (
               <div className="absolute z-20 flex flex-col items-start justify-start w-[450px] sm:w-[90%] lg:w-[646px] mac:w-[546px]  sm:bottom-[2rem] sm:left-[2rem] md:bottom-[2rem] md:left-[2rem]  lg:left-[15rem] lg:bottom-[10rem] mac:left-52 mac:bottom-[6rem]">
-                <div className="absolute w-full h-full bg-white dark:bg-black bg-opacity-5 dark:bg-opacity-5 rounded-[20px] backdrop-blur-2xl" />
+                <div className="absolute w-full h-full backdrop-blur-mobile" />
                 <div className="relative mt-[15px] ml-[22px] text-[40px] sm:text-[40px] lg:text-[64px] font-['Katibeh'] text-black dark:text-white">What Makes You</div>
                 <div className="relative mt-[6px] ml-[22px] text-5xl sm:text-[45px] lg:text-8xl mac:text-7xl font-['Revelstoke'] text-black dark:text-white">{title[currentIndex % title.length]}!</div>
                 <div className="relative mt-[10px] ml-[22px] mr-[20px] text-[14px] sm:text-[14px] lg:text-[15px] font-['Inter'] text-black dark:text-white">We are brand enthusiasts. We are storytellers. We are a full-service creative agency combining strategic thinking and sharp design to build great brands in this cutthroat business competition.</div>

@@ -225,3 +225,16 @@ body {
       rotate(-360deg);
   }
 }
+
+/* styles.css */
+
+.backdrop-blur-mobile {
+  @apply bg-white dark:bg-black bg-opacity-5 dark:bg-opacity-5 rounded-[20px] backdrop-blur-2xl;
+}
+
+@media (max-width: 640px) {
+  .backdrop-blur-mobile {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
