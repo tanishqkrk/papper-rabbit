@@ -37,7 +37,7 @@ function Cta() {
         </div>
         <div className="relative flex flex-col items-center justify-center gap-4">
           <Link href="/contactus">
-            <button className=" button2 lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] md:w-[150px] md:h-[40px] sm:w-[100px] sm:h-[35px] relative text-xs bg-zinc-950 dark:bg-white rounded-[10px] text-white dark:text-black lg:text-sm font-bold font-['Inter'] leading-[30px] justify-center items-center inline-flex hover:shadow-pink">
+            <button className=" button2 lg:w-[192px] lg:h-[44px] lg:mr-[100px] mac:w-[200px] mac:h-[50px] mac:mr-[100px] md:w-[150px] md:h-[40px] sm:w-[100px] sm:h-[35px] relative text-xs bg-zinc-950 dark:bg-white rounded-[5px] text-white dark:text-black lg:text-sm font-bold font-['Inter'] leading-[30px] justify-center items-center inline-flex hover:shadow-pink">
               Know More
             </button>
           </Link>
