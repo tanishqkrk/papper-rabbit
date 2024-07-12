@@ -478,3 +478,17 @@ body {
     --angle: 480deg; /* 120 degrees more for smoother overlap */
   }
 }
+
+/* blur for hutch icons bg image */
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+@media (max-width: 640px) {
+  .backdrop-blur-sm {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
