@@ -10,34 +10,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 function Podcast() {
-  const [inView, setInView] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5, // Adjust as needed
-      }
-    );
-
-    const currentSection = sectionRef.current;
-
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
-    };
-  }, []);
-
   const podcasts = [
     podcastimg1,
     podcastimg2,
@@ -51,39 +23,60 @@ function Podcast() {
   ];
 
   return (
-    <div
-      ref={sectionRef}
-      className="w-full h-[70%] relative flex flex-col items-center justify-start dark:bg-black"
-    >
-      <div className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
-        <div class="w-full h-[6rem] relative content-center">
-          <div class="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
+    <div className="w-full h-[70%] relative flex flex-col items-center justify-start dark:bg-black">
+      <motion.div
+        className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="w-full h-[6rem] relative content-center">
+          <motion.div
+            className="w-full left-0 top-[2.1rem] absolute text-red-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+          >
             Advertising
-          </div>
-          <div class="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
+          </motion.div>
+          <motion.div
+            className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
             Podcast
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="w-full h-fit relative flex items-start gap-5 overflow-x-scroll no-scrollbar mt-20 mask-gradient">
-        <div className="w-full  h-[542px] lg:h-[600px] sm:h-[420px] relative flex flex-col justify-end items-end ml-[13%] ">
+      <motion.div
+        className="w-full h-fit relative flex items-start gap-5 overflow-x-scroll no-scrollbar mt-20 mask-gradient"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
+        <div className="w-full h-[542px] lg:h-[600px] sm:h-[420px] relative flex flex-col justify-end items-end ml-[13%]">
           <Image
-            className="w-[306px] lg:w-full sm:h-[420px] sm:w-[240px] h-[542px] lg:h-[598px] left-0 top-0 absolute  rounded-[20px]"
+            className="w-[306px] lg:w-full sm:h-[420px] sm:w-[240px] h-[542px] lg:h-[598px] left-0 top-0 absolute rounded-[20px]"
             src={podcastimg1}
             alt=""
           />
 
-          <div className="absolute top-0 left-0 w-10 h-10 z-30 text-black  dark:text-white lg:w-16 lg:h-16 mac:w-14 mac:h-14 flex flex-col items-center justify-center text-[12px] lg:text-[32px] mac:text-[26px] font-bold font-['Katibeh'] rounded-tl-[20px] rounded-br-[20px] ">
-            <div className="w-full h-full absolute -z-10 rounded-tl-[20px] bg-white dark:bg-black rounded-br-[20px] backdrop-blur-[20px] opacity-50 " />
+          <div className="absolute top-0 left-0 w-10 h-10 z-30 text-black dark:text-white lg:w-16 lg:h-16 mac:w-14 mac:h-14 flex flex-col items-center justify-center text-[12px] lg:text-[32px] mac:text-[26px] font-bold font-['Katibeh'] rounded-tl-[20px] rounded-br-[20px]">
+            <div className="w-full h-full absolute -z-10 rounded-tl-[20px] bg-white dark:bg-black rounded-br-[20px] backdrop-blur-[20px] opacity-50" />
             334
           </div>
 
-          <div className="w-[306px] lg:w-full sm:w-[240px] z-10 lg:h-[255px] h-[180px] relative rounded-[20px] flex flex-col justify-center items-start gap-2  ">
-            <div className="w-[306px] lg:w-full sm:w-[240px]  z-10  h-[255px] relative rounded-[20px] flex flex-col justify-center items-start gap-2.5">
+          <div className="w-[306px] lg:w-full sm:w-[240px] z-10 lg:h-[255px] h-[180px] relative rounded-[20px] flex flex-col justify-center items-start gap-2">
+            <div className="w-[306px] lg:w-full sm:w-[240px] z-10 h-[255px] relative rounded-[20px] flex flex-col justify-center items-start gap-2.5">
               <div className="w-full h-full absolute z-10 rounded-[20px] bg-opacity-70 backdrop-blur-2xl dark:bg-opacity-70 dark:backdrop-blur-2xl bg-gray-50 dark:bg-black" />
-              <div className="w-full flex z-10 items-center justify-start px-3 ">
-                <span className="text-justify text-black dark:text-white text-[32px] font-normal font-['Katibeh'] ">
+              <div className="w-full flex z-10 items-center justify-start px-3">
+                <span className="text-justify text-black dark:text-white text-[32px] font-normal font-['Katibeh']">
                   Title
                 </span>
               </div>
@@ -120,14 +113,19 @@ function Podcast() {
         {podcasts.slice(1).map((img, index) => (
           <PodcastCards key={index} podcastimg={img} />
         ))}
-      </div>
+      </motion.div>
 
-      <div className="w-[122px] h-11 relative mt-20">
-        <button className="w-[122px] h-11  bg-zinc-950 rounded-[10px] text-center text-white text-xs md:text-sm font-normal font-['Inter'] leading-none ">
-          {" "}
-          <Link href="/podcast">View More</Link>{" "}
+      <motion.div
+        className="w-[122px] h-11 relative mt-20"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
+        <button className="w-[122px] h-11 bg-zinc-950 rounded-[10px] text-center text-white text-xs md:text-sm font-normal font-['Inter'] leading-none">
+          <Link href="/podcast">View More</Link>
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 }
