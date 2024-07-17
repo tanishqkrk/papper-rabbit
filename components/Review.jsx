@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import review1 from "../public/assets/review/review1.jpg";
 import review2 from "../public/assets/review/review2.jpg";
 import review3 from "../public/assets/review/review3.jpg";
@@ -11,68 +11,50 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 function Review() {
-  const [inView, setInView] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5, // Adjust as needed
-      }
-    );
-
-    const currentSection = sectionRef.current;
-
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
-    };
-  }, []);
-
   const reviews = [review1, review2, review3, review4, review5, review3];
 
   return (
-    <div
-      className="w-full dark:bg-black pt-10 relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex"
-      ref={sectionRef}
-    >
-      <div className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20">
-        <div className="w-full h-[6rem] relative content-center">
-          <div className="w-full left-0 top-[2.1rem] absolute text-purple-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center">
-            Reviews
-          </div>
-          <div className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center">
-            Happy
-          </div>
-        </div>
-      </div>
-
-      <div
-        x-data="{}"
-        x-init="$nextTick(() => {
-                        let ul = $refs.cards;
-                        ul.insertAdjacentHTML('afterend', ul.outerHTML);
-                        ul.nextSibling.setAttribute('aria-hidden', 'true');
-                    })"
-        className="w-[100%] h-[540px] lg:w-[70%] mac:w-[85%] relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_left,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+    <div className="w-full dark:bg-black pt-10 relative pb-14 flex-col justify-start items-center gap-[0.18px] inline-flex">
+      <motion.div
+        className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
       >
-        <ul
-          x-ref="cards"
-          className="h-full flex items-center justify-center md:justify-start relative [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll-right"
-        >
+        <div className="w-full h-[6rem] relative content-center">
+          <motion.div
+            className="w-full left-0 top-[2.1rem] absolute text-purple-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+          >
+            Reviews
+          </motion.div>
+          <motion.div
+            className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            Happy
+          </motion.div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="w-[100%] h-[540px] lg:w-[70%] mac:w-[85%] relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_left,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
+        <ul className="h-full flex items-center justify-center md:justify-start relative [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll-right">
           <motion.li
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: inView ? 1 : 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65, duration: 0.5 }}
             className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end ml-[13%] p-4"
           >
@@ -111,7 +93,7 @@ function Review() {
             <motion.li
               key={index}
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: inView ? 1 : 0, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.85 + index * 0.2, duration: 0.5 }}
               className="lg:w-[340px] w-[306px] h-[360px] relative flex items-end justify-end p-4"
             >
@@ -119,7 +101,7 @@ function Review() {
             </motion.li>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </div>
   );
 }
