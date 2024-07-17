@@ -198,35 +198,35 @@ function AboutUsPage() {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-8 mt-10">
-          <div className="  relative text-black font-bold text-2xl font-['Inter'] ">
+          <div className="dark:text-white  relative text-black font-bold text-2xl font-['Inter'] ">
             Process(icons)
           </div>
 
-          <div className="flex  p-[3%]  flex-justify-center items-center relative gap-8">
+          <div className="flex  p-[3%] dark:text-white  flex-justify-center items-center relative gap-8">
             <div className="w-full h-full flex  flex-col items-center relative">
               <Image className="relative rounded-[300px]" src={img1} alt="" />
-              <div className="mt-[1rem] text-black text-2xl sm:text-xl relative  font-bold font-[Inter] ">
+              <div className="mt-[1rem] dark:text-white  text-black text-2xl sm:text-xl relative  font-bold font-[Inter] ">
                 Domain
               </div>
             </div>
 
             <div className="w-full h-full flex  flex-col items-center relative">
               <Image className="relative rounded-[300px]" src={img1} alt="" />
-              <div className="mt-[1rem] text-black text-2xl relative sm:text-xl font-bold font-[Inter] ">
+              <div className="mt-[1rem] dark:text-white  text-black text-2xl relative sm:text-xl font-bold font-[Inter] ">
                 Domain
               </div>
             </div>
 
             <div className="w-full h-full flex  flex-col items-center relative">
               <Image className="relative rounded-[300px]" src={img1} alt="" />
-              <div className="mt-[1rem] text-black text-2xl relative sm:text-xl font-bold font-[Inter] ">
+              <div className="mt-[1rem]  dark:text-white  text-black text-2xl relative sm:text-xl font-bold font-[Inter] ">
                 Domain
               </div>
             </div>
 
             <div className="w-full h-full flex  flex-col items-center relative">
               <Image className="relative rounded-[300px]" src={img1} alt="" />
-              <div className="mt-[1rem] text-black text-2xl relative  sm:text-xl font-bold font-[Inter] ">
+              <div className="mt-[1rem] dark:text-white  text-black text-2xl relative  sm:text-xl font-bold font-[Inter] ">
                 Domain
               </div>
             </div>
@@ -234,7 +234,7 @@ function AboutUsPage() {
         </div>
 
         <div className=" w-full flex h-[500px] mt-5 flex-col items-center gap-4 justify-between">
-          <div className=" relative text-black font-bold text-2xl font-['Inter'] ">
+          <div className="dark:text-white  relative text-black font-bold text-2xl font-['Inter'] ">
             Why Choose Paper Rabbit?
           </div>
           <div className="w-[74%]  h-full flex items-center justify-center  gap-4">
