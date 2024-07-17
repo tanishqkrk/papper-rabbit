@@ -25,7 +25,7 @@ function Insights() {
         className="w-full h-full relative flex flex-col justify-center items-center pt-10 lg:pt-20"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.5 }}
       >
         <div className="w-full h-[6rem] relative content-center">
@@ -33,7 +33,7 @@ function Insights() {
             className="w-full left-0 top-[2.1rem] absolute text-teal-200 lg:text-8xl mac:text-7xl text-[3.5rem] font-normal font-['Heaven'] leading-[64px] flex flex-col items-center justify-center"
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.1, duration: 0.5 }}
           >
             Advertising
@@ -42,7 +42,7 @@ function Insights() {
             className="w-full left-0 top-0 absolute text-black dark:text-white lg:text-[4rem] mac:text-[4rem] text-[2.5rem] font-normal font-['Revelstoke'] leading-[64px] flex flex-col items-center justify-center"
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             Insight
@@ -54,7 +54,7 @@ function Insights() {
         className="w-full mac:w-[70%] lg:w-[56%] relative text-center text-black dark:text-white text-2xl font-bold font-['Inter'] leading-9 mt-10 p-8"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
@@ -74,7 +74,7 @@ function Insights() {
         className="w-[100%] h-[540px] lg:w-[70%] mac:w-[85%] relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_left,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
         <ul
@@ -86,7 +86,7 @@ function Insights() {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ delay: 0.3 + index * 0.2, duration: 0.5 }}
               className="lg:w-[340px] w-[306px] h-full relative flex items-end justify-end p-4"
             >
@@ -100,7 +100,7 @@ function Insights() {
         className="w-[122px] h-11 relative pt-10"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
         <button className="w-[122px] h-11 bg-zinc-950 dark:bg-white rounded-[10px] text-center text-white dark:text-black text-sm font-normal font-['Inter'] leading-none">
