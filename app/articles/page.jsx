@@ -9,7 +9,6 @@ function ArticlesPage() {
       <div className="w-[100%] h-full flex flex-col mt-20">
         <div className="w-[100%] h-full flex flex-col gap-4 justify-center items-center">
           <CommonRows />
-          <CommonRows />
         </div>
       </div>
     </div>
