@@ -1,44 +1,16 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import hatch1 from "../public/assets/brandingimg/hatch1.svg";
 import hatch2 from "../public/assets/brandingimg/hatch2.svg";
 import hatch from "../public/assets/brandingimg/hatch.svg";
-import Link from "next/link";
 
 const DummyBranding = () => {
   const [mouse, setMouse] = useState(false);
   const [id, setId] = useState(0);
-
-  const sectionRef = useRef(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.3, // Adjust as needed
-      }
-    );
-
-    const currentSection = sectionRef.current;
-
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
-    };
-  }, []);
 
   const mousehover = (id) => {
     setMouse(!mouse);
@@ -46,14 +18,12 @@ const DummyBranding = () => {
   };
 
   return (
-    <div
-      ref={sectionRef}
-      className="w-full sm:mb-3 md:mb-3 z-20 relative flex flex-col items-center justify-start gap-12 bg-white dark:bg-black h-screen mac:h-[880px] sm:h-full md:h-full"
-    >
+    <div className="w-full sm:mb-3 md:mb-3 z-20 relative flex flex-col items-center justify-start gap-12 bg-white dark:bg-black h-screen mac:h-[880px] sm:h-full md:h-full">
       <motion.div
         className="w-full relative flex flex-col justify-center items-center pt-10 lg:pt-20"
         initial={{ opacity: 0, y: -50 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.5 }}
       >
         <div className="w-full h-[6rem] relative content-center">
@@ -69,7 +39,8 @@ const DummyBranding = () => {
       <motion.div
         className="lg:grid sm:p-3 md:p-3 lg:grid-cols-2 relative lg:grid-rows-1 sam-[58%] lg:max-w-[58%] mac:w-[75%] mac:grid mac:grid-cols-2 lg:mt-[5rem] mac:grid-rows-1 ram-[75%] flex flex-col items-center justify-center lg:mb-20 lg:gap-20 mac:gap-20"
         initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : {}}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
         <div className="relative flex items-center justify-center mt-5">
@@ -189,42 +160,13 @@ const DummyBranding = () => {
               </motion.div>
             )}
           </motion.div>
-          <motion.div
-            className="w-5 h-5 z-10 bottom-16 left-56 hidden lg:block mac:block absolute"
-            onMouseEnter={() => mousehover(4)}
-            onMouseLeave={() => mousehover(0)}
-            initial={{ scale: 1 }}
-            whileHover={{ scale: 1.2 }}
-          >
-            <div className="w-5 h-5 left-0 top-0 absolute rounded-full border border-white" />
-            <div className="w-[16.08px] h-[16.08px] left-[1.96px] top-[1.96px] absolute bg-yellow-200 rounded-full" />
-            {mouse && id === 4 && (
-              <motion.div
-                className="w-80 z-50 flex-col items-center justify-center bg-black bg-opacity-25 rounded-[20px] backdrop-blur-[20px]"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="p-4 relative text-white text-xl font-bold font-['Inter']">
-                  Perspiciatis unde dolori perspiciatis unde dolori
-                </div>
-                <div className="p-4 relative text-justify text-white text-sm font-normal font-['Inter']">
-                  &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud. Incididunt ut
-                  labore et dolore magna aliqua.Ut enim ad minim veniam, quis
-                  nostrud. Incididunt ut labore et dolore magna aliqua.Ut enim
-                  ad minim veniam, quis nostrud.&quot;
-                </div>
-              </motion.div>
-            )}
-          </motion.div>
         </div>
         <motion.div
           className="w-[100%] lg:pl-16 h-full relative flex flex-col items-start justify-center gap-10"
-          initial={{ opacity: 0, x: 50 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ delay: 1, duration: 0.5 }}
         >
           <div className="w-[100%] mt-[1.8rem] md:mt-[0rem] flex flex-col  gap-5">
             <div className=" w-full  text-black dark:text-white text-left text-xs md:text-sm lg:text-[0.9rem] font-normal font-['Inter'] leading-5">
